@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated 2017-7-19 12:20:36 by Hibernate Tools 5.2.3.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" default-access="property" default-cascade="none" default-lazy="true">
+    <class catalog="hafu_db" dynamic-insert="false" dynamic-update="false" mutable="true" name="com.hafu.domain.HafuUserComment" optimistic-lock="version" polymorphism="implicit" select-before-update="false" table="hafu_user_comment">
+        <id name="uid" type="java.lang.Integer">
+            <column name="uid"/>
+            <generator class="identity"/>
+        </id>
+        <property generated="never" lazy="false" name="username" optimistic-lock="true" type="string" unique="false">
+            <column length="16" name="username"/>
+        </property>
+        <property generated="never" lazy="false" name="password" optimistic-lock="true" type="string" unique="false">
+            <column length="16" name="password"/>
+        </property>
+        <property generated="never" lazy="false" name="regtime" optimistic-lock="true" type="date" unique="false">
+            <column length="10" name="regtime"/>
+        </property>
+        <set embed-xml="true" fetch="select" inverse="true" lazy="true" mutable="true" name="hafuUserProfileComments" optimistic-lock="true" sort="unsorted" table="hafu_userProfile_comment">
+            <key on-delete="noaction">
+                <column name="uid"/>
+            </key>
+            <one-to-many class="com.hafu.domain.HafuUserProfileComment" embed-xml="true" not-found="exception"/>
+        </set>
+    </class>
+</hibernate-mapping>

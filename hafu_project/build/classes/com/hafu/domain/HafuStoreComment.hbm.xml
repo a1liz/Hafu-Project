@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated 2017-7-19 12:20:36 by Hibernate Tools 5.2.3.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" default-access="property" default-cascade="none" default-lazy="true">
+    <class catalog="hafu_db" dynamic-insert="false" dynamic-update="false" mutable="true" name="com.hafu.domain.HafuStoreComment" optimistic-lock="version" polymorphism="implicit" select-before-update="false" table="hafu_store_comment">
+        <id name="sid" type="java.lang.Integer">
+            <column name="sid"/>
+            <generator class="identity"/>
+        </id>
+        <property generated="never" lazy="false" name="storename" optimistic-lock="true" type="string" unique="false">
+            <column length="16" name="storename"/>
+        </property>
+        <property generated="never" lazy="false" name="storeAddress" optimistic-lock="true" type="string" unique="false">
+            <column name="storeAddress"/>
+        </property>
+        <property generated="never" lazy="false" name="storeProfile" optimistic-lock="true" type="string" unique="false">
+            <column length="65535" name="storeProfile"/>
+        </property>
+        <property generated="never" lazy="false" name="type" optimistic-lock="true" type="java.lang.Integer" unique="false">
+            <column name="type"/>
+        </property>
+        <property generated="never" lazy="false" name="status" optimistic-lock="true" type="java.lang.Integer" unique="false">
+            <column name="status"/>
+        </property>
+        <property generated="never" lazy="false" name="icon" optimistic-lock="true" type="string" unique="false">
+            <column name="icon"/>
+        </property>
+        <property generated="never" lazy="false" name="fee" optimistic-lock="true" type="java.lang.Double" unique="false">
+            <column name="fee" precision="22" scale="0"/>
+        </property>
+        <property generated="never" lazy="false" name="deliveryRange" optimistic-lock="true" type="java.lang.Double" unique="false">
+            <column name="deliveryRange" precision="22" scale="0"/>
+        </property>
+        <property generated="never" lazy="false" name="openingTime" optimistic-lock="true" type="date" unique="false">
+            <column length="10" name="openingTime"/>
+        </property>
+        <set embed-xml="true" fetch="select" inverse="true" lazy="true" mutable="true" name="hafuGoodComments" optimistic-lock="true" sort="unsorted" table="hafu_good_comment">
+            <key on-delete="noaction">
+                <column name="sid"/>
+            </key>
+            <one-to-many class="com.hafu.domain.HafuGoodComment" embed-xml="true" not-found="exception"/>
+        </set>
+    </class>
+</hibernate-mapping>

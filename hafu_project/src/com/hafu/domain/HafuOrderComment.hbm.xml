@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated 2017-7-19 12:20:36 by Hibernate Tools 5.2.3.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" default-access="property" default-cascade="none" default-lazy="true">
+    <class catalog="hafu_db" dynamic-insert="false" dynamic-update="false" mutable="true" name="com.hafu.domain.HafuOrderComment" optimistic-lock="version" polymorphism="implicit" select-before-update="false" table="hafu_order_comment">
+        <id name="orderid" type="java.lang.Integer">
+            <column name="orderid"/>
+            <generator class="identity"/>
+        </id>
+        <many-to-one class="com.hafu.domain.HafuGoodComment" embed-xml="true" fetch="select" insert="true" name="hafuGoodComment" not-found="exception" optimistic-lock="true" unique="false" update="true">
+            <column name="gid"/>
+        </many-to-one>
+        <property generated="never" lazy="false" name="pid" optimistic-lock="true" type="java.lang.Integer" unique="false">
+            <column name="pid"/>
+        </property>
+        <property generated="never" lazy="false" name="orderTime" optimistic-lock="true" type="date" unique="false">
+            <column length="10" name="orderTime"/>
+        </property>
+        <property generated="never" lazy="false" name="orderStatus" optimistic-lock="true" type="java.lang.Integer" unique="false">
+            <column name="orderStatus"/>
+        </property>
+        <set embed-xml="true" fetch="select" inverse="true" lazy="true" mutable="true" name="hafuOrderGoodComments" optimistic-lock="true" sort="unsorted" table="hafu_orderGood_comment">
+            <key on-delete="noaction">
+                <column name="orderid" not-null="true"/>
+            </key>
+            <one-to-many class="com.hafu.domain.HafuOrderGoodComment" embed-xml="true" not-found="exception"/>
+        </set>
+    </class>
+</hibernate-mapping>

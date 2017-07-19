@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated 2017-7-19 12:20:36 by Hibernate Tools 5.2.3.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" default-access="property" default-cascade="none" default-lazy="true">
+    <class catalog="hafu_db" dynamic-insert="false" dynamic-update="false" mutable="true" name="com.hafu.domain.HafuUserProfileComment" optimistic-lock="version" polymorphism="implicit" select-before-update="false" table="hafu_userProfile_comment">
+        <id name="pid" type="java.lang.Integer">
+            <column name="pid"/>
+            <generator class="identity"/>
+        </id>
+        <many-to-one class="com.hafu.domain.HafuUserComment" embed-xml="true" fetch="select" insert="true" name="hafuUserComment" not-found="exception" optimistic-lock="true" unique="false" update="true">
+            <column name="uid"/>
+        </many-to-one>
+        <property generated="never" lazy="false" name="name" optimistic-lock="true" type="string" unique="false">
+            <column length="16" name="name"/>
+        </property>
+        <property generated="never" lazy="false" name="gender" optimistic-lock="true" type="java.lang.Integer" unique="false">
+            <column name="gender"/>
+        </property>
+        <property generated="never" lazy="false" name="userAddress" optimistic-lock="true" type="string" unique="false">
+            <column name="userAddress"/>
+        </property>
+        <property generated="never" lazy="false" name="phone" optimistic-lock="true" type="string" unique="false">
+            <column length="11" name="phone"/>
+        </property>
+    </class>
+</hibernate-mapping>

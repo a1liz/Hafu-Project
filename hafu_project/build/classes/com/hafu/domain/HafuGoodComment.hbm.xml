@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated 2017-7-19 12:20:36 by Hibernate Tools 5.2.3.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" default-access="property" default-cascade="none" default-lazy="true">
+    <class catalog="hafu_db" dynamic-insert="false" dynamic-update="false" mutable="true" name="com.hafu.domain.HafuGoodComment" optimistic-lock="version" polymorphism="implicit" select-before-update="false" table="hafu_good_comment">
+        <id name="gid" type="java.lang.Integer">
+            <column name="gid"/>
+            <generator class="identity"/>
+        </id>
+        <many-to-one class="com.hafu.domain.HafuStoreComment" embed-xml="true" fetch="select" insert="true" name="hafuStoreComment" not-found="exception" optimistic-lock="true" unique="false" update="true">
+            <column name="sid"/>
+        </many-to-one>
+        <property generated="never" lazy="false" name="goodname" optimistic-lock="true" type="string" unique="false">
+            <column length="16" name="goodname"/>
+        </property>
+        <property generated="never" lazy="false" name="goodPrice" optimistic-lock="true" type="java.lang.Double" unique="false">
+            <column name="goodPrice" precision="22" scale="0"/>
+        </property>
+        <property generated="never" lazy="false" name="icon" optimistic-lock="true" type="string" unique="false">
+            <column name="icon"/>
+        </property>
+        <property generated="never" lazy="false" name="goodProfile" optimistic-lock="true" type="string" unique="false">
+            <column length="65535" name="goodProfile"/>
+        </property>
+        <property generated="never" lazy="false" name="goodStatus" optimistic-lock="true" type="java.lang.Integer" unique="false">
+            <column name="goodStatus"/>
+        </property>
+        <set embed-xml="true" fetch="select" inverse="true" lazy="true" mutable="true" name="hafuOrderComments" optimistic-lock="true" sort="unsorted" table="hafu_order_comment">
+            <key on-delete="noaction">
+                <column name="gid"/>
+            </key>
+            <one-to-many class="com.hafu.domain.HafuOrderComment" embed-xml="true" not-found="exception"/>
+        </set>
+        <set embed-xml="true" fetch="select" inverse="true" lazy="true" mutable="true" name="hafuOrderGoodComments" optimistic-lock="true" sort="unsorted" table="hafu_orderGood_comment">
+            <key on-delete="noaction">
+                <column name="gid" not-null="true"/>
+            </key>
+            <one-to-many class="com.hafu.domain.HafuOrderGoodComment" embed-xml="true" not-found="exception"/>
+        </set>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated 2017-7-19 12:20:36 by Hibernate Tools 5.2.3.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" default-access="property" default-cascade="none" default-lazy="true">
+    <class catalog="hafu_db" dynamic-insert="false" dynamic-update="false" mutable="true" name="com.hafu.domain.HafuOrderGoodComment" optimistic-lock="version" polymorphism="implicit" select-before-update="false" table="hafu_orderGood_comment">
+        <composite-id class="com.hafu.domain.HafuOrderGoodCommentId" mapped="false" name="id" unsaved-value="undefined">
+            <key-property name="orderid" type="int">
+                <column name="orderid"/>
+            </key-property>
+            <key-property name="gid" type="int">
+                <column name="gid"/>
+            </key-property>
+        </composite-id>
+        <many-to-one class="com.hafu.domain.HafuGoodComment" embed-xml="true" fetch="select" insert="false" name="hafuGoodComment" not-found="exception" optimistic-lock="true" unique="false" update="false">
+            <column name="gid" not-null="true"/>
+        </many-to-one>
+        <many-to-one class="com.hafu.domain.HafuOrderComment" embed-xml="true" fetch="select" insert="false" name="hafuOrderComment" not-found="exception" optimistic-lock="true" unique="false" update="false">
+            <column name="orderid" not-null="true"/>
+        </many-to-one>
+        <property generated="never" lazy="false" name="goodnumber" optimistic-lock="true" type="java.lang.Integer" unique="false">
+            <column name="goodnumber"/>
+        </property>
+    </class>
+</hibernate-mapping>
