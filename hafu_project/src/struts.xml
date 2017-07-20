@@ -2,17 +2,24 @@
 <!DOCTYPE struts PUBLIC
 	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
 	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
 <struts>
 
-    <constant name="struts.enable.DynamicMethodInvocation" value="false" />
-    <constant name="struts.devMode" value="true" />
     <package name="default" namespace="/" extends="struts-default">
-        
+   
+    <action name="login" class="com.hafu.action.loginAction" >
+		<result name="success">main.jsp</result>
+		<result name="fail">login.jsp</result>
+		</action>
+		<action name="signup" class="com.hafu.action.signupAction" >
+		<result name="success">login.jsp</result>
+		<result name="fail">signup.jsp</result>
+		</action>
+		<action name="store_search" class="com.hafu.action.storeAction" >
+		<result name="success">store.jsp</result>
+		<result name="fail">searchfailed.jsp</result>
+		</action>
+		
     </package>
-
-    <include file="example.xml"/>
-
-	
-    <!-- Add packages here -->
 
 </struts>
