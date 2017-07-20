@@ -12,26 +12,26 @@ import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.ModelDriven;
 
 public class loginAction extends ActionSupport implements ModelDriven<HafuUserComment>{
-	private HafuUserComment user = new HafuUserComment();
+	private HafuUserComment hafu_user_comment = new HafuUserComment();
 
 	@Override
 	public HafuUserComment getModel() {
-		return user;
+		return hafu_user_comment;
 	}
 	
 	public HafuUserComment getUser() {
-		return user;
+		return hafu_user_comment;
 	}
 
-	public void setUser(HafuUserComment user) {
-		this.user = user;
+	public void setUser(HafuUserComment hafu_user_comment) {
+		this.hafu_user_comment = hafu_user_comment;
 	}
 	
 	public String execute() {
 		System.out.println("µÇÂ¼ÖÐ");
-		String sql = "select * from user where username=? and password=?";
+		String sql = "select * from hafu_user_comment where username=? and password=?";
 		DBUtil db = new DBUtil();
-		ResultSet rs = db.execQuery(sql, new Object[]{user.getUsername(),user.getPassword()});
+		ResultSet rs = db.execQuery(sql, new Object[]{hafu_user_comment.getUsername(),hafu_user_comment.getPassword()});
 		try {
 			if(rs.next()){
 				return SUCCESS;

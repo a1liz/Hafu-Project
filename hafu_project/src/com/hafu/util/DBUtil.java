@@ -16,7 +16,7 @@ public class DBUtil {
 	public void getConn(){
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
-			String url ="jdbc:mysql://127.0.0.1:3306/test";
+			String url ="jdbc:mysql://127.0.0.1:3306/hafu_db";
 			String username ="root";
 			String password = "1";
 			conn = DriverManager.getConnection(url, username, password);
