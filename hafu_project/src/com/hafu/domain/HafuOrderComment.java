@@ -1,5 +1,5 @@
 package com.hafu.domain;
-// Generated 2017-7-19 12:20:35 by Hibernate Tools 5.2.3.Final
+// Generated 2017-7-21 16:02:03 by Hibernate Tools 5.2.3.Final
 
 import java.util.Date;
 import java.util.HashSet;

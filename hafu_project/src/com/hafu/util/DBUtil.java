@@ -8,15 +8,15 @@ import java.sql.SQLException;
 
 
 public class DBUtil {
-	//ÈıÊôĞÔËÄ·½·¨
+	//ä¸‰å±æ€§å››æ–¹æ³•
 	private Connection conn = null;
 	private PreparedStatement  ptsm = null;
 	private ResultSet rs =null;
-	//·½·¨Ò»£º»ñÈ¡Êı¾İ¿âÁ¬½Ó
+	//æ–¹æ³•ä¸€ï¼šè·å–æ•°æ®åº“è¿æ¥
 	public void getConn(){
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
-			String url ="jdbc:mysql://127.0.0.1:3306/hafu_db";
+			String url ="jdbc:mysql://127.0.0.1:3306/test";
 			String username ="root";
 			String password = "1";
 			conn = DriverManager.getConnection(url, username, password);
@@ -28,7 +28,7 @@ public class DBUtil {
 			e.printStackTrace();
 		}
 	}
-	//·½·¨¶ş£º¹Ø±ÕÊı¾İ¿âÁ¬½ÓµÄ·½·¨
+	//æ–¹æ³•äºŒï¼šå…³é—­æ•°æ®åº“è¿æ¥çš„æ–¹æ³•
 	public void closeConn(){
 		if(rs!=null){
 			try {
@@ -55,7 +55,7 @@ public class DBUtil {
 			}
 		}
 	}
-	//·½·¨Èı£ºÔöÉ¾¸ÄµÄ·½·¨
+	//æ–¹æ³•ä¸‰ï¼šå¢åˆ æ”¹çš„æ–¹æ³•
 	public int executOther(final String strSQL,final Object[] params){
 		this.getConn();
 		try {
@@ -71,7 +71,7 @@ public class DBUtil {
 		
 		return -1;
 	}
-	//·½·¨ËÄ£º×¨ÃÅÖ´ĞĞ²éÑ¯µÄ·½·¨
+	//æ–¹æ³•å››ï¼šä¸“é—¨æ‰§è¡ŒæŸ¥è¯¢çš„æ–¹æ³•
 	public ResultSet execQuery(final String strSQL,final Object[] params){
 		this.getConn();
 		try {

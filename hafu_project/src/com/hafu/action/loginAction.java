@@ -28,7 +28,7 @@ public class loginAction extends ActionSupport implements ModelDriven<HafuUserCo
 	}
 	
 	public String execute() {
-		System.out.println("µÇÂ¼ÖÐ");
+		System.out.println("ç™»å½•ä¸­");
 		String sql = "select * from hafu_user_comment where username=? and password=?";
 		DBUtil db = new DBUtil();
 		ResultSet rs = db.execQuery(sql, new Object[]{hafu_user_comment.getUsername(),hafu_user_comment.getPassword()});
@@ -39,7 +39,7 @@ public class loginAction extends ActionSupport implements ModelDriven<HafuUserCo
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		this.addActionError("ÓÃ»§Ãû²»´æÔÚ»òÃÜÂë´íÎó");
+		this.addActionError("ç”¨æˆ·åä¸å­˜åœ¨æˆ–å¯†ç é”™è¯¯");
 		return "fail";
 	}
 }

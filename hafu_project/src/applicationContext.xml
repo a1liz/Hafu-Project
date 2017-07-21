@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans.xsd
+	http://www.springframework.org/schema/context
+	http://www.springframework.org/schema/context/spring-context.xsd
+	http://www.springframework.org/schema/aop
+	http://www.springframework.org/schema/aop/spring-aop.xsd
+	http://www.springframework.org/schema/tx 
+	http://www.springframework.org/schema/tx/spring-tx.xsd">
+<!-- 没有Hibernate配置文件 -->
+	<!-- 连接池信息 -->
+	<!-- 引入外部属性文件. -->
+	<context:property-placeholder location="classpath:jdbc.properties"/>
+	
+	<!-- 配置c3p0连接池 -->
+	<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+		<property name="driverClass" value="${jdbc.driver}"/>
+		<property name="jdbcUrl" value="${jdbc.url}"/>
+		<property name="user" value="${jdbc.user}"/>
+		<property name="password" value="${jdbc.password}"/>
+	</bean>
+	
+	<!-- 零障碍整合 在spring配置文件中引入hibernate的配置文件 -->
+	<bean id="sessionFactory" class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+		<!-- 管理连接池 -->
+		<property name="dataSource" ref="dataSource"/>
+		<!-- 配置Hibernate的属性 -->
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
+				<prop key="hibernate.show_sql">true</prop>
+				<prop key="hibernate.format_sql">true</prop>
+				<prop key="hibernate.hbm2ddl.auto">update</prop>
+				<prop key="hibernate.connection.autocommit">false</prop>
+			</props>
+		</property>
+		
+		<!-- 加载映射 -->
+		 <property name="mappingResources">
+			<list>
+				<value>com/chinasoft/app/domian/Book.hbm.xml</value>
+				<value>com/chinasoft/app/domian/User.hbm.xml</value>
+			</list>
+		</property> 
+	</bean>
+	
+	<!-- 配置Action -->
+	<bean id="bookAction" class="com.chinasoft.app.action.BookAction" scope="prototype">
+		<property name="bookService" ref="bookService"/>
+	</bean>
+	<bean id="loginAction" class="com.chinasoft.app.action.LoginAction" scope="prototype"/>
+	<!-- Service的配置 -->
+	<bean id="bookService" class="com.chinasoft.app.service.impl.BookServiceImpl">
+		<property name="bookDao" ref="bookDao"/>
+	</bean>
+	
+	<!-- DAO的配置 -->
+	<bean id="bookDao" class="com.chinasoft.app.dao.impl.BookDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+
+	
+	<!-- 管理事务 -->
+	<bean id="transactionManager" class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	
+	<!-- 注解开启事务 -->
+	<tx:annotation-driven transaction-manager="transactionManager"/>
+</beans>

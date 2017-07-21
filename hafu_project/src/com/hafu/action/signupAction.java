@@ -31,7 +31,7 @@ public class signupAction extends ActionSupport implements ModelDriven<HafuUserC
 		ResultSet rs = db.execQuery(sql, new Object[]{hafu_user_comment.getUsername()});
 		try {
 			if(rs.next()){
-				this.addActionError("用户名已存在");
+				this.addActionError("鐢ㄦ埛鍚嶅凡瀛樺湪");
 				return "fail";
 			}
 		} catch (SQLException e) {
