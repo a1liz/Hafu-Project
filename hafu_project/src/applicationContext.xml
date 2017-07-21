@@ -56,22 +56,38 @@
 	<!-- 配置Action -->
 	<bean id="loginAction" class="com.hafu.action.LoginAction" scope="prototype"/>
 	<bean id="signupAction" class="com.hafu.action.SignupAction" scope="prototype"/>
+	
 	<!-- Service的配置 -->
+	<bean id="hafuGoodService" class="com.hafu.service.dao.impl.HafuGoodServiceImpl">
+	<property name="hafuGoodDao" ref="hafuGoodDao"/>
+	</bean>
+	<bean id="hafuOrderService" class="com.hafu.service.dao.impl.HafuOrderServiceImpl">
+	<property name="hafuOrderDao" ref="hafuOrderDao"/>
+	</bean>
+	<bean id="hafuOrderGoodService" class="com.hafu.service.dao.impl.HafuOrderGoodServiceImpl">
+	<property name="hafuOrderGoodDao" ref="hafuOrderGoodDao"/>
+	</bean>
+	<bean id="hafuStoreService" class="com.hafu.service.dao.impl.HafuStoreServiceImpl">
+	<property name="hafuStoreDao" ref="hafuStoreDao"/>
+	</bean>
+	<bean id="hafuUserProfileService" class="com.hafu.service.dao.impl.HafuUserProfileServiceImpl">
+	<property name="hafuUserProfileDao" ref="hafuUserProfileDao"/>
+	</bean>
 	
 	<!-- DAO的配置 -->
-	<bean id="HafuGoodDao" class="com.hafu.dao.impl.HafuGoodDaoImpl">
+	<bean id="hafuGoodDao" class="com.hafu.dao.impl.HafuGoodDaoImpl">
 		<property name="sessionFactory" ref="sessionFactory"></property>
 	</bean>
-	<bean id="HafuOrderDao" class="com.hafu.dao.impl.HafuOrderDaoImpl">
+	<bean id="hafuOrderDao" class="com.hafu.dao.impl.HafuOrderDaoImpl">
 		<property name="sessionFactory" ref="sessionFactory"></property>
 	</bean>
-	<bean id="HafuOrderGoodDao" class="com.hafu.dao.impl.HafuOrderGoodDaoImpl">
+	<bean id="hafuOrderGoodDao" class="com.hafu.dao.impl.HafuOrderGoodDaoImpl">
 		<property name="sessionFactory" ref="sessionFactory"></property>
 	</bean>
-	<bean id="HafuStoreDao" class="com.hafu.dao.impl.HafuStoreDaoImpl">
+	<bean id="hafuStoreDao" class="com.hafu.dao.impl.HafuStoreDaoImpl">
 		<property name="sessionFactory" ref="sessionFactory"></property>
 	</bean>
-	<bean id="HafuUserProfileDao" class="com.hafu.dao.impl.HafuUserProfileDaoImpl">
+	<bean id="hafuUserProfileDao" class="com.hafu.dao.impl.HafuUserProfileDaoImpl">
 		<property name="sessionFactory" ref="sessionFactory"></property>
 	</bean>
 	
