@@ -2,14 +2,19 @@ package com.hafu.action;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.List;
+
+import org.hibernate.Query;
+import org.hibernate.Session;
+import org.hibernate.Transaction;
 
 import com.hafu.domain.HafuUserComment;
-import com.hafu.util.DBUtil;
+import com.hafu.util.HibernateUtil;
 import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.ModelDriven;
 
 
-public class signupAction extends ActionSupport implements ModelDriven<HafuUserComment>{
+public class SignupAction extends ActionSupport implements ModelDriven<HafuUserComment>{
 	private HafuUserComment hafu_user_comment = new HafuUserComment();
 
 	@Override
@@ -26,24 +31,19 @@ public class signupAction extends ActionSupport implements ModelDriven<HafuUserC
 	}
 	
 	public String execute() {
-		String sql = "select * from hafu_user_comment where username=?";
-		DBUtil db = new DBUtil();
-		ResultSet rs = db.execQuery(sql, new Object[]{hafu_user_comment.getUsername()});
-		try {
-			if(rs.next()){
-				this.addActionError("用户名已存在");
-				return "fail";
-			}
-		} catch (SQLException e) {
-			e.printStackTrace();
+		Session session = HibernateUtil.openSession();
+		Transaction tran = session.beginTransaction();
+		Query query = session.createQuery("from hafu_user_comment where username = ?");
+		query.setString(0, hafu_user_comment.getUsername());
+		if(!query.list().isEmpty()) {
+			this.addActionError("用户名已存在");
+			session.close();
+			return "fail";
 		}
-		String sql2 = "insert into hafu_user_comment values(null, ?, ?)";
-		int rs2 = db.executOther(sql2, new Object[]{hafu_user_comment.getUsername(), hafu_user_comment.getPassword()});
-		db.closeConn();
-		if (rs2 > 0) {
+		else {
+			session.save(hafu_user_comment);
+			session.close();
 			return SUCCESS;
-		} else {
-			return null;
 		}
 	}
 

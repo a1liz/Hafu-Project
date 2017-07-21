@@ -6,20 +6,18 @@
 <struts>
 
     <package name="default" namespace="/" extends="struts-default">
-   
-    <action name="login" class="com.hafu.action.loginAction" >
+    <action name="login" class="com.hafu.action.LoginAction" >
 		<result name="success">main.jsp</result>
 		<result name="fail">login.jsp</result>
 		</action>
-		<action name="signup" class="com.hafu.action.signupAction" >
+	<action name="signup" class="com.hafu.action.SignupAction" >
 		<result name="success">login.jsp</result>
 		<result name="fail">signup.jsp</result>
-		</action>
-		<action name="store_search" class="com.hafu.action.storeAction" >
+	</action>
+	<action name="store_search" class="com.hafu.action.StoreAction" >
 		<result name="success">store.jsp</result>
 		<result name="fail">searchfailed.jsp</result>
-		</action>
-		
+	</action>
     </package>
 
 </struts>

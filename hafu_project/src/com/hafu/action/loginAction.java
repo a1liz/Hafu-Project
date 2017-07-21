@@ -4,14 +4,19 @@ import com.opensymphony.xwork2.ActionSupport;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.List;
+
+import org.hibernate.Query;
+import org.hibernate.Session;
+import org.hibernate.Transaction;
 
 import com.hafu.domain.HafuUserComment;
-import com.hafu.util.DBUtil;
+import com.hafu.util.HibernateUtil;
 
 import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.ModelDriven;
 
-public class loginAction extends ActionSupport implements ModelDriven<HafuUserComment>{
+public class LoginAction extends ActionSupport implements ModelDriven<HafuUserComment>{
 	private HafuUserComment hafu_user_comment = new HafuUserComment();
 
 	@Override
@@ -28,18 +33,19 @@ public class loginAction extends ActionSupport implements ModelDriven<HafuUserCo
 	}
 	
 	public String execute() {
-		System.out.println("登录中");
-		String sql = "select * from hafu_user_comment where username=? and password=?";
-		DBUtil db = new DBUtil();
-		ResultSet rs = db.execQuery(sql, new Object[]{hafu_user_comment.getUsername(),hafu_user_comment.getPassword()});
-		try {
-			if(rs.next()){
-				return SUCCESS;
-			}
-		} catch (SQLException e) {
-			e.printStackTrace();
+		Session session = HibernateUtil.openSession();
+		Transaction tran = session.beginTransaction();
+		Query query = session.createQuery("from hafu_user_comment where username = ? and password = ?");
+		query.setString(0, hafu_user_comment.getUsername());
+		query.setString(1, hafu_user_comment.getPassword());
+		List<HafuUserComment> list = query.list();
+		tran.commit();
+		session.close();
+		if(!list.isEmpty())
+			return SUCCESS;
+		else {
+			this.addActionError("用户名或密码错误！");
+			return "fail";
 		}
-		this.addActionError("用户名不存在或密码错误");
-		return "fail";
 	}
 }

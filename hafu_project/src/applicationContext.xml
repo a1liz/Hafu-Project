@@ -43,27 +43,37 @@
 		<!-- 加载映射 -->
 		 <property name="mappingResources">
 			<list>
-				<value>com/chinasoft/app/domian/Book.hbm.xml</value>
-				<value>com/chinasoft/app/domian/User.hbm.xml</value>
+				<value>com/hafu/domain/HafuGoodComment.hbm.xml</value>
+				<value>com/hafu/domain/HafuOrderComment.hbm.xml</value>
+				<value>com/hafu/domain/HafuOrderGoodComment.hbm.xml</value>
+				<value>com/hafu/domain/HafuStoreComment.hbm.xml</value>
+				<value>com/hafu/domain/HafuUserComment.hbm.xml</value>
+				<value>com/hafu/domain/HafuUserProfileComment.hbm.xml</value>
 			</list>
 		</property> 
 	</bean>
 	
 	<!-- 配置Action -->
-	<bean id="bookAction" class="com.chinasoft.app.action.BookAction" scope="prototype">
-		<property name="bookService" ref="bookService"/>
-	</bean>
-	<bean id="loginAction" class="com.chinasoft.app.action.LoginAction" scope="prototype"/>
+	<bean id="loginAction" class="com.hafu.action.LoginAction" scope="prototype"/>
+	<bean id="signupAction" class="com.hafu.action.SignupAction" scope="prototype"/>
 	<!-- Service的配置 -->
-	<bean id="bookService" class="com.chinasoft.app.service.impl.BookServiceImpl">
-		<property name="bookDao" ref="bookDao"/>
-	</bean>
 	
 	<!-- DAO的配置 -->
-	<bean id="bookDao" class="com.chinasoft.app.dao.impl.BookDaoImpl">
-		<property name="sessionFactory" ref="sessionFactory"/>
+	<bean id="HafuGoodDao" class="com.hafu.dao.impl.HafuGoodDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
 	</bean>
-
+	<bean id="HafuOrderDao" class="com.hafu.dao.impl.HafuOrderDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<bean id="HafuOrderGoodDao" class="com.hafu.dao.impl.HafuOrderGoodDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<bean id="HafuStoreDao" class="com.hafu.dao.impl.HafuStoreDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<bean id="HafuUserProfileDao" class="com.hafu.dao.impl.HafuUserProfileDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
 	
 	<!-- 管理事务 -->
 	<bean id="transactionManager" class="org.springframework.orm.hibernate3.HibernateTransactionManager">

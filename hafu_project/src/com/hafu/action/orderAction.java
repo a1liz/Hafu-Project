@@ -1,5 +1,5 @@
 package com.hafu.action;
 
-public class orderAction {
+public class OrderAction {
 
 }

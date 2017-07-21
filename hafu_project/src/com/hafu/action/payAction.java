@@ -1,5 +1,5 @@
 package com.hafu.action;
 
-public class payAction {
+public class PayAction {
 
 }

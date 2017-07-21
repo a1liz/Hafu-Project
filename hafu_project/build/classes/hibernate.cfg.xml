@@ -46,9 +46,13 @@
 	<property name="c3p0.idle_test_period">3000</property>
 
 	<!-- 通知Hibernate加载那些映射文件 -->
-	<!-- <mapping resource="com/nku/liz/app/domain/User.hbm.xml" />
-	<mapping resource="com/nku/liz/app/domain/Student.hbm.xml" />
-	<mapping resource="com/nku/liz/app/domain/Classinfo.hbm.xml" /> -->
+	<mapping resource="com/hafu/domain/HafuGoodComment.hbm.xml" />
+	<mapping resource="com/hafu/domain/HafuOrderComment.hbm.xml" />
+	<mapping resource="com/hafu/domain/HafuOrderGoodComment.hbm.xml" />
+	<mapping resource="com/hafu/domain/HafuStoreComment.hbm.xml" />
+	<mapping resource="com/hafu/domain/HafuUserComment.hbm.xml" />
+	<mapping resource="com/hafu/domain/HafuUserProfileComment.hbm.xml" />
+
 
 </session-factory>
 </hibernate-configuration>
