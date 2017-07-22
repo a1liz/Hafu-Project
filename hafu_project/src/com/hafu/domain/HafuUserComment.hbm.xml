@@ -12,7 +12,7 @@
         <property generated="never" lazy="false" name="password" optimistic-lock="true" type="string" unique="false">
             <column length="16" name="password"/>
         </property>
-        <property generated="never" lazy="false" name="regtime" optimistic-lock="true" type="timestamp" unique="false">
+        <property generated="never" lazy="false" name="regtime" optimistic-lock="true" type="timestamp" unique="false" insert="false">
             <column length="19" name="regtime" not-null="true"/>
         </property>
         <set embed-xml="true" fetch="select" inverse="true" lazy="true" mutable="true" name="hafuUserProfileComments" optimistic-lock="true" sort="unsorted" table="hafu_userProfile_comment">

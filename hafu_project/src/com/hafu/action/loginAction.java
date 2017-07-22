@@ -35,7 +35,7 @@ public class LoginAction extends ActionSupport implements ModelDriven<HafuUserCo
 	public String execute() {
 		Session session = HibernateUtil.openSession();
 		Transaction tran = session.beginTransaction();
-		Query query = session.createQuery("from hafu_user_comment where username = ? and password = ?");
+		Query query = session.createQuery("from HafuUserComment where username = ? and password = ?");
 		query.setString(0, hafu_user_comment.getUsername());
 		query.setString(1, hafu_user_comment.getPassword());
 		List<HafuUserComment> list = query.list();

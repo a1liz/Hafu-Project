@@ -43,6 +43,7 @@ public class HafuOrderGoodDaoImpl extends HibernateDaoSupport implements HafuOrd
 				Query query = session.createQuery("from HafuOrderGoodComment where orderid = ?");
 				query.setInteger(0, orderid);
 				List<HafuOrderGoodComment> list = query.list();
+				session.close();
 				return list;
 			}
 			
@@ -62,6 +63,7 @@ public class HafuOrderGoodDaoImpl extends HibernateDaoSupport implements HafuOrd
 				query.setInteger(0, orderid);
 				query.setInteger(1, gid);
 				List<HafuOrderGoodComment> list = query.list();
+				session.close();
 				return list;
 			}
 		});

@@ -54,23 +54,23 @@
 	</bean>
 	
 	<!-- 配置Action -->
-	<bean id="loginAction" class="com.hafu.action.LoginAction" scope="prototype"/>
-	<bean id="signupAction" class="com.hafu.action.SignupAction" scope="prototype"/>
+	<bean id="com.hafu.action.LoginAction" class="com.hafu.action.LoginAction" scope="prototype"/>
+	<bean id="com.hafu.action.SignupAction" class="com.hafu.action.SignupAction" scope="prototype"/>
 	
 	<!-- Service的配置 -->
-	<bean id="hafuGoodService" class="com.hafu.service.dao.impl.HafuGoodServiceImpl">
+	<bean id="hafuGoodService" class="com.hafu.service.impl.HafuGoodServiceImpl">
 	<property name="hafuGoodDao" ref="hafuGoodDao"/>
 	</bean>
-	<bean id="hafuOrderService" class="com.hafu.service.dao.impl.HafuOrderServiceImpl">
+	<bean id="hafuOrderService" class="com.hafu.service.impl.HafuOrderServiceImpl">
 	<property name="hafuOrderDao" ref="hafuOrderDao"/>
 	</bean>
-	<bean id="hafuOrderGoodService" class="com.hafu.service.dao.impl.HafuOrderGoodServiceImpl">
+	<bean id="hafuOrderGoodService" class="com.hafu.service.impl.HafuOrderGoodServiceImpl">
 	<property name="hafuOrderGoodDao" ref="hafuOrderGoodDao"/>
 	</bean>
-	<bean id="hafuStoreService" class="com.hafu.service.dao.impl.HafuStoreServiceImpl">
+	<bean id="hafuStoreService" class="com.hafu.service.impl.HafuStoreServiceImpl">
 	<property name="hafuStoreDao" ref="hafuStoreDao"/>
 	</bean>
-	<bean id="hafuUserProfileService" class="com.hafu.service.dao.impl.HafuUserProfileServiceImpl">
+	<bean id="hafuUserProfileService" class="com.hafu.service.impl.HafuUserProfileServiceImpl">
 	<property name="hafuUserProfileDao" ref="hafuUserProfileDao"/>
 	</bean>
 	

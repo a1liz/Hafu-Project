@@ -2,6 +2,7 @@ package com.hafu.action;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.Date;
 import java.util.List;
 
 import org.hibernate.Query;
@@ -12,6 +13,7 @@ import com.hafu.domain.HafuUserComment;
 import com.hafu.util.HibernateUtil;
 import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.ModelDriven;
+import com.sun.org.apache.bcel.internal.generic.NEW;
 
 
 public class SignupAction extends ActionSupport implements ModelDriven<HafuUserComment>{
@@ -33,7 +35,7 @@ public class SignupAction extends ActionSupport implements ModelDriven<HafuUserC
 	public String execute() {
 		Session session = HibernateUtil.openSession();
 		Transaction tran = session.beginTransaction();
-		Query query = session.createQuery("from hafu_user_comment where username = ?");
+		Query query = session.createQuery("from HafuUserComment where username = ?");
 		query.setString(0, hafu_user_comment.getUsername());
 		if(!query.list().isEmpty()) {
 			this.addActionError("用户名已存在");

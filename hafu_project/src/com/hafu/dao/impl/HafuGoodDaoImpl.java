@@ -43,6 +43,7 @@ public class HafuGoodDaoImpl extends HibernateDaoSupport implements HafuGoodDao 
 				Query query = session.createQuery("from HafuGoodComment where sid = ?");
 				query.setInteger(0, sid);
 				List<HafuGoodComment> list = query.list();
+				session.close();
 				return list;
 			}
 		});

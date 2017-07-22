@@ -49,6 +49,7 @@ public class HafuStoreDaoImpl extends HibernateDaoSupport implements HafuStoreDa
 				Query query = session.createQuery("from HafuStoreComment where storename = ?");
 				query.setString(0, storename);
 				List<HafuStoreComment> list = query.list();
+				session.close();
 				return list;
 			}
 		});

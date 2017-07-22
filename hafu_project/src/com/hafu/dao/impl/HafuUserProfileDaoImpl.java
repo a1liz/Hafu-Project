@@ -43,6 +43,7 @@ public class HafuUserProfileDaoImpl extends HibernateDaoSupport implements HafuU
 				Query query = session.createQuery("from HafuUserProfileComment where uid = ?");
 				query.setInteger(0, uid);
 				List<HafuUserProfileComment> list = query.list();
+				session.close();
 				return list;
 			}
 		});

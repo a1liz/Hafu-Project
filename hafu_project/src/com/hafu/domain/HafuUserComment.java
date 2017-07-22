@@ -26,7 +26,7 @@ public class HafuUserComment implements java.io.Serializable {
 	public HafuUserComment(String username, String password, Date regtime, Set hafuUserProfileComments) {
 		this.username = username;
 		this.password = password;
-		this.regtime = regtime;
+		this.regtime = null;
 		this.hafuUserProfileComments = hafuUserProfileComments;
 	}
 
