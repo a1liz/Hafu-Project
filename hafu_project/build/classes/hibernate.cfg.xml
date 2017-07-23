@@ -14,7 +14,7 @@
 		jdbc:mysql:///hafu_db
 	</property>
 	<property name="hibernate.connection.username">root</property>
-	<property name="hibernate.connection.password">qwer123</property>
+	<property name="hibernate.connection.password">123</property>
 	<!-- Hibernate的方言 -->
 	<!-- 生成底层SQL不同的 -->
 	<property name="hibernate.dialect">
