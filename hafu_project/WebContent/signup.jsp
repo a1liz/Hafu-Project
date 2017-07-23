@@ -13,7 +13,7 @@
 <body>
 <div class="login-form">
 			<div class="top-login">
-				<span><img src="images/2.png" alt=""/></span>
+				<span><img src="images/logo.png" alt=""/></span>
 			</div>
 			<h1>注册</h1>
 			<div class="login-top">

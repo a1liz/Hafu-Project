@@ -7,7 +7,7 @@
 
     <package name="default" namespace="/" extends="struts-default">
     <action name="login" class="com.hafu.action.LoginAction" >
-		<result name="success">main.jsp</result>
+		<result name="success">store.jsp</result>
 		<result name="fail">login.jsp</result>
 		</action>
 	<action name="signup" class="com.hafu.action.SignupAction" >
