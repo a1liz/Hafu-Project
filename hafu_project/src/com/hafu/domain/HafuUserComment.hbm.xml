@@ -7,10 +7,10 @@
             <generator class="identity"/>
         </id>
         <property generated="never" lazy="false" name="username" optimistic-lock="true" type="string" unique="false">
-            <column length="16" name="username"/>
+            <column length="16" name="username" not-null="true"/>
         </property>
         <property generated="never" lazy="false" name="password" optimistic-lock="true" type="string" unique="false">
-            <column length="16" name="password"/>
+            <column length="16" name="password" not-null="true"/>
         </property>
         <property generated="never" lazy="false" name="regtime" optimistic-lock="true" type="timestamp" unique="false" insert="false">
             <column length="19" name="regtime" not-null="true"/>

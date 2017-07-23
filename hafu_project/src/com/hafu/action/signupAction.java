@@ -39,11 +39,17 @@ public class SignupAction extends ActionSupport implements ModelDriven<HafuUserC
 		query.setString(0, hafu_user_comment.getUsername());
 		if(!query.list().isEmpty()) {
 			this.addActionError("用户名已存在");
+			tran.commit();
+			session.close();
+			return "fail";
+		} else if(hafu_user_comment.getUsername() == null) {
+			tran.commit();
 			session.close();
 			return "fail";
 		}
 		else {
 			session.save(hafu_user_comment);
+			tran.commit();
 			session.close();
 			return SUCCESS;
 		}
