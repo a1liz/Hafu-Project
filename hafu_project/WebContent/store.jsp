@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-
 <html lang="en">
 <head>
 <title>商家</title>
@@ -114,14 +113,15 @@
   <div class="home_main">
 	   <div class="col-md-7 col-sm-7 col-xs-7 img1 img-grid">
 		   <div class="img_text_w3ls text-center">
-				<h4>Starbucks.</h4>
+			   <h4><a href="registered.html"><font color="	#FFFFFF">Starbucks.</a> </h4>
 				<span> </span>
 				<p>我们提供的不是普通的速溶咖啡，而是味道香浓立等可取的星巴克咖啡 </p>
 			</div>
 		</div>
 		<div class="col-md-5 img2 col-sm-5 col-xs-5 img-grid">
 		    <div class="img_text_w3ls text-center">
-				<h4>McDonald's.</h4>
+				 <h4><a href="registered.html">     <font color="	#FFFFFF">McDonald's.</a> </h4>
+				
 				<span> </span>
 				<p>I am lovin it</p>
 			  </div>
@@ -131,14 +131,14 @@
   <div class="home_main">
 	   <div class="col-md-5 col-sm-5 col-xs-5 img3 img-grid ">
 		    <div class="img_text_w3ls text-center">
-				<h4>DICOS.</h4>
+				<h4><a href="goods.jsp"><font color="	#FFFFFF">DICOS.</a> </h4>
 				<span> </span>
 				<p>开心就要咔嚓咔嚓 </p>
 			  </div>
 		</div>
 	  <div class="col-md-7 col-sm-7 col-xs-7 img4 img-grid">
 		    <div class="img_text_w3ls text-center">
-				<h4>PizzaHut</h4>
+				<h4><a href="registered.html"><font color="	#FFFFFF">PizzaHut.</a> </h4>
 				<span> </span>
 				<p>pizza and more </p>
 			</div>
@@ -148,14 +148,14 @@
    <div class="home_main">
 	   <div class="col-md-7 col-sm-7 col-xs-7 img-grid  img5">
 		  <div class="img_text_w3ls text-center">
-				<h4> 松本家</h4>
+				<h4><a href="registered.html"><font color="	#FFFFFF">松本家.</a> </h4>
 				<span> </span>
 				<p>いい料理を作る。 </p>
 		  </div>
 		 </div>
 		<div class="col-md-5 col-sm-5 col-xs-5 img-grid img6">
 		  <div class="img_text_w3ls text-center">
-				<h4>鲜芋仙.</h4>
+				<h4><a href="registered.html"><font color="	#FFFFFF">鲜芋仙.</a> </h4>
 				<span> </span>
 				<p>两个老大的私房的甜品</p>
 		  </div>
