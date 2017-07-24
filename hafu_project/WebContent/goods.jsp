@@ -496,9 +496,9 @@
 	
 	
 	
-	<div style = "text-align:right;"
+	<div style = "text-align:right;">
 <div class="df">
-			<a href="products.html">查看购物车</a>
+			<a href="checkout.jsp">查看购物车</a>
 	<div class="df-text">			
 		<img src="images/right1.png" alt=""/>	
 	</div>
@@ -577,7 +577,7 @@
 	<!--//footer-->
 	<div class="footer-bottom">
 		<div class="container">
-			<p> &copy;饿！你就死了吧.<a target="_blank" href="http://www.17sucai.com/">@hafuhafu</a></p>
+			<p> &copy;饿！你就死了吧.<a target="_blank" href="">@hafuhafu</a></p>
 		</div>
 	</div>
 </body>
