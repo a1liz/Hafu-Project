@@ -332,7 +332,7 @@ function time()
 				
 				<div class="clearfix"> </div>
 				<div class="register-but">
-				   <form>  <input type="button" class="item_add items" value="确认订单">
+				   <form>  <a href="PayPage.jsp"><input type="button" class="item_add items" value="确认订单">
 					   
 					   <input type="button" onclick="alert('我们“饿死了么”拒绝取消下单')" class="item_add items" value="残忍离开">
 					   <div class="clearfix"> </div>
