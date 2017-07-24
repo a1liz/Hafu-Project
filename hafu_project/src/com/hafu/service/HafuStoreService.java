@@ -2,6 +2,7 @@ package com.hafu.service;
 
 import java.util.List;
 import com.hafu.domain.HafuStoreComment;
+import com.hafu.vo.StorePage;
 
 /**
  * 商店逻辑
@@ -18,6 +19,7 @@ public interface HafuStoreService {
 	// 根据id去查询商店
 	public HafuStoreComment findStoreById(int sid);
 	// 根据店名去查询商店
-	public List<HafuStoreComment> findStoreByName(String storename);
-
+	public StorePage findStoreByName(String storename, int currentPage, int pageSize);
+	// 查询所有商店
+	public StorePage findAllStore(int currentPage,int pageSize);
 }
