@@ -1,6 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html>
 <html>
 <head>
 <title>Checkout</title>
@@ -32,13 +30,67 @@
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 					</button>
-					<h1 class="navbar-brand"><a  href="index.html">Eslm</a></h1>
+					<h1 class="navbar-brand"><a  href="index.html">饿死了me</a></h1>
 				</div>
 				<!--navbar-header-->
 				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 					<ul class="nav navbar-nav">
-						<li><a href="index.html" class="active">Home</a></li>
-			
+						<li><a href="index.html" class="active">主页</a></li>
+						<li class="dropdown">
+							
+							
+			<!-- 以下为删除剩余无用文件 -->
+							<ul class="dropdown-menu multi-column columns-4">
+								<div class="row">
+									<div class="col-sm-3">
+										<h4>By Relation</h4>
+										<ul class="multi-column-dropdown">
+											<li><a class="list" href="products.html">Friend</a></li>
+											<li><a class="list" href="products.html">Lover</a></li>
+											<li><a class="list" href="products.html">Sister</a></li>
+											<li><a class="list" href="products.html">Brother</a></li>
+											<li><a class="list" href="products.html">Kids</a></li>
+											<li><a class="list" href="products.html">Parents</a></li>
+										</ul>
+									</div>																		
+									<div class="col-sm-3">
+										<h4>By Flavour</h4>
+										<ul class="multi-column-dropdown">
+											<li><a class="list" href="products.html">Chocolate</a></li>
+											<li><a class="list" href="products.html">Mixed Fruit</a></li>
+											<li><a class="list" href="products.html">Butterscotch</a></li>
+											<li><a class="list" href="products.html">Strawberry</a></li>
+											<li><a class="list" href="products.html">Vanilla</a></li>
+											<li><a class="list" href="products.html">Eggless Cakes</a></li>
+										</ul>
+									</div>
+									<div class="col-sm-3">
+										<h4>By Theme</h4>
+										<ul class="multi-column-dropdown">
+											<li><a class="list" href="products.html">Heart shaped</a></li>
+											<li><a class="list" href="products.html">Cartoon Cakes</a></li>
+											<li><a class="list" href="products.html">2-3 Tier Cakes</a></li>
+											<li><a class="list" href="products.html">Square shape</a></li>
+											<li><a class="list" href="products.html">Round shape</a></li>
+											<li><a class="list" href="products.html">Photo cakes</a></li>
+										</ul>
+									</div>
+									<div class="col-sm-3">
+										<h4>Weight</h4>
+										<ul class="multi-column-dropdown">
+											<li><a class="list" href="products.html">1 kG</a></li>
+											<li><a class="list" href="products.html">1.5 kG</a></li>
+											<li><a class="list" href="products.html">2 kG</a></li>
+											<li><a class="list" href="products.html">3 kG</a></li>
+											<li><a class="list" href="products.html">4 kG</a></li>
+											<li><a class="list" href="products.html">Large</a></li>
+										</ul>
+									</div>
+								</div>
+							</ul>
+						</li>
+					   <li class="dropdown grid">
+							
 							<ul class="dropdown-menu multi-column columns-4">
 								<div class="row">
 									<div class="col-sm-3">
@@ -88,8 +140,59 @@
 								</div>
 							</ul>
 						</li>				
-						
-							<ul class="dropdown-menu multi-column columns-3">
+						<li class="dropdown grid">
+							
+							<ul class="dropdown-menu multi-column columns-4">
+								<div class="row">
+									<div class="col-sm-3">
+										<h4>By Relation</h4>
+										<ul class="multi-column-dropdown">
+											<li><a class="list" href="products.html">Friend</a></li>
+											<li><a class="list" href="products.html">Lover</a></li>
+											<li><a class="list" href="products.html">Sister</a></li>
+											<li><a class="list" href="products.html">Brother</a></li>
+											<li><a class="list" href="products.html">Kids</a></li>
+											<li><a class="list" href="products.html">Parents</a></li>
+										</ul>
+									</div>																		
+									<div class="col-sm-3">
+										<h4>By Flavour</h4>
+										<ul class="multi-column-dropdown">
+											<li><a class="list" href="products.html">Chocolate</a></li>
+											<li><a class="list" href="products.html">Mixed Fruit</a></li>
+											<li><a class="list" href="products.html">Butterscotch</a></li>
+											<li><a class="list" href="products.html">Strawberry</a></li>
+											<li><a class="list" href="products.html">Vanilla</a></li>
+											<li><a class="list" href="products.html">Eggless Cakes</a></li>
+										</ul>
+									</div>
+									<div class="col-sm-3">
+										<h4>By Theme</h4>
+										<ul class="multi-column-dropdown">
+											<li><a class="list" href="products.html">Heart shaped</a></li>
+											<li><a class="list" href="products.html">Cartoon Cakes</a></li>
+											<li><a class="list" href="products.html">2-3 Tier Cakes</a></li>
+											<li><a class="list" href="products.html">Square shape</a></li>
+											<li><a class="list" href="products.html">Round shape</a></li>
+											<li><a class="list" href="products.html">Photo cakes</a></li>
+										</ul>
+									</div>
+									<div class="col-sm-3">
+										<h4>Weight</h4>
+										<ul class="multi-column-dropdown">
+											<li><a class="list" href="products.html">1 kG</a></li>
+											<li><a class="list" href="products.html">1.5 kG</a></li>
+											<li><a class="list" href="products.html">2 kG</a></li>
+											<li><a class="list" href="products.html">3 kG</a></li>
+											<li><a class="list" href="products.html">4 kG</a></li>
+											<li><a class="list" href="products.html">Large</a></li>
+										</ul>
+									</div>
+								</div>
+							</ul>
+						</li>
+						<li class="dropdown grid">
+						<ul class="dropdown-menu multi-column columns-3">
 								<div class="row">
 									<div class="col-sm-4">
 										<h4>By Relation</h4>
@@ -128,9 +231,9 @@
 							</ul>
 						</li>								
 					</ul> 
-					
+					<!--/.navbar-collapse-->
 				</div>
-				
+				<!--//navbar-header-->
 			</nav>
 			<div class="header-info">
 				<div class="header-right search-box">
@@ -144,34 +247,31 @@
 						</form>
 					</div>	
 				</div>
-				
+				<div class="header-right login">
+					<a href="#"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></a>
+					<div id="loginBox">                
+						<form id="loginForm">
+							<fieldset id="body">
+								<fieldset>
+									<label for="email">Email Address</label>
+									<input type="text" name="email" id="email">
+								</fieldset>
+								<fieldset>
+									<label for="password">Password</label>
+									<input type="password" name="password" id="password">
+								</fieldset>
+								<input type="submit" id="login" value="Sign in">
+								<label for="checkbox"><input type="checkbox" id="checkbox"> <i>Remember me</i></label>
+							</fieldset>
+							<p>New User ? <a class="sign" href="account.html">Sign Up</a> <span><a href="#">Forgot your password?</a></span></p>
+						</form>
+					</div>
+				</div>
 				<div class="header-right cart">
-				
-				
-				
-				
-				
-				
-				
-					<a href="order.jsp"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true">结算</span></a>
-				
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-				<div class="cart-box">
-						<h4><a href="checkout.html">
-							<span class="simpleCart_total"> $0.00 </span> (<span id="simpleCart_quantity" class="simpleCart_quantity"> 0 </span>) 
+					<a href="order.jsp"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span></a>
+					<div class="cart-box">
+						<h4><a href="">
+							<span class="simpleCart_total"> ¥20.00 </span> (<span id="simpleCart_quantity" class="simpleCart_quantity"> 0 </span>) 
 						</a></h4>
 						<p><a href="javascript:;" class="simpleCart_empty">Empty cart</a></p>
 						<div class="clearfix"> </div>
@@ -184,22 +284,10 @@
 	</div>
 	<!--//header-->
 	<!--cart-items-->
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+	<c:forEach items="${requestScope.goodPage.dataList}" var="goods">
 	<div class="cart-items">
 		<div class="container">
-			<h2>我的购物车</h2>
+			<h2>My Shopping Cart</h2>
 			<script>$(document).ready(function(c) {
 				$('.close1').on('click', function(c){
 					$('.cart-header').fadeOut('slow', function(c){
@@ -208,82 +296,143 @@
 					});	  
 				});
 			</script>
-			<c:forEach var="i" begin="1" end="5">
-   Item <c:out value="${i}"/><p>
-</c:forEach>
 			<div class="cart-header">
 				<div class="close1"> </div>
+				
 				<div class="cart-sec simpleCart_shelfItem">
 					<div class="cart-item cyc">
-						 <img src="images/di8.png" class="img-responsive" alt="">
+						 <img src="images/di3.png" class="img-responsive" alt="">
 					</div>
 					<div class="cart-item-info">
-						<h3><a href="#"> 至尊鸡腿堡 </a><span>Picked</span></h3>
-						<ul class="qty">
-							<li><p>FREE delivery</p></li>
-						</ul>
+						<h3><a href="#"> 至尊鸡腿堡 <!-- </a><span></span></h3>  -->
+						 <ul class="qty">
+							<li><p>number:</p></li>
+							<li><p>< 1 ></p></li>
+						</ul> 
 						<div class="delivery">
-							<p>Service Charges : ￥12</p>
-							<span>Delivered in 30 minute</span>
+							<p>价格：¥12.00</p>
+							<span>Delivered in 30 minutes</span>
 							<div class="clearfix"></div>
 						</div>	
 					</div>
 					<div class="clearfix"></div>
 				</div>
 			</div>
-			 <script>$(document).ready(function(c) {
+			
+			
+			
+			<script>$(document).ready(function(c) {
+				$('.close1').on('click', function(c){
+					$('.cart-header').fadeOut('slow', function(c){
+						$('.cart-header').remove();
+					});
+					});	  
+				});
+			</script>
+			<div class="cart-header">
+				<div class="close1"> </div>
+				
+				<div class="cart-sec simpleCart_shelfItem">
+					<div class="cart-item cyc">
+						 <img src="images/di4.png" class="img-responsive" alt="">
+					</div>
+					<div class="cart-item-info">
+						<h3><a href="#"> 脆皮鸡腿 <!-- </a><span></span></h3>  -->
+						 <ul class="qty">
+							<li><p>number:</p></li>
+							<li><p>< 1 ></p></li>
+						</ul> 
+						<div class="delivery">
+							<p>价格：¥8.00</p>
+							<span>Delivered in 30 minutes</span>
+							<div class="clearfix"></div>
+						</div>	
+					</div>
+					<div class="clearfix"></div>
+				</div>
+			</div>
+			
+		</c:forEach>
+			
+			
+			
+			
+			
+			 <!-- <script>$(document).ready(function(c) {
 					$('.close2').on('click', function(c){
 							$('.cart-header2').fadeOut('slow', function(c){
 						$('.cart-header2').remove();
 					});
-					});	  
+					});
 					});
 			 </script>
-			
+			<div class="cart-header2">
+				<div class="close2"> </div>
+				<div class="cart-sec simpleCart_shelfItem">
 					<div class="cart-item cyc">
-						 <img src="images/di7.png" class="img-responsive" alt="">
+						 <img src="images/m2.png" class="img-responsive" alt="">
 					</div>
 					<div class="cart-item-info">
-						<h3><a href="#"> 薯条(小) </a><span>Picked</span></h3>
+						<h3><a href="#"> Lorem Ipsum is not simply </a><span>Pickup time:</span></h3>
 						<ul class="qty">
+							<li><p>Min. order value:</p></li>
 							<li><p>FREE delivery</p></li>
 						</ul>
 						<div class="delivery">
-							<p>Service Charges : ￥5</p>
-							<span>Delivered in 30 minute</span>
-							<div class="clearfix"></div>
-						</div>	
+						<p>Service Charges : $10.00</p>
+						<span>Delivered in 1-1:30 hours</span>
+						<div class="clearfix"></div>
 					</div>
-					<div class="clearfix"></div>
-					
+				   </div>
+				   <div class="clearfix"></div>
 				</div>
-				
 			</div>
+
+
+
+				<script>$(document).ready(function(c) {
+					$('.close3').on('click', function(c){
+							$('.cart-header3').fadeOut('slow', function(c){
+						$('.cart-header3').remove();
+					});
+					});
+					});
+				</script>
+			<div class="cart-header3">
 				<div class="close3"> </div>
-					
+				<div class="cart-sec simpleCart_shelfItem">
+					<div class="cart-item cyc">
+						 <img src="images/m3.png" class="img-responsive" alt="">
+					</div>
+					<div class="cart-item-info">
+						<h3><a href="#"> Lorem Ipsum is not simply </a><span>Pickup time:</span></h3>
+						<ul class="qty">
+							<li><p>Min. order value:</p></li>
+							<li><p>FREE delivery</p></li>
+						</ul>
+						<div class="delivery">
+							<p>Service Charges : $10.00</p>
+							<span>Delivered in 1-1:30 hours</span>
+							<div class="clearfix"></div>
+						</div>
 					</div>
 					<div class="clearfix"></div>
 				</div>
-			</div>		
+			</div>
+			 -->
+				
 		</div>
 	</div>
-	<!--//
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	checkout-->	
-	
+	<!--//checkout-->	
+	<!--footer-->
+
+
+
+
+	<!--footer-->
 	<div class="footer-bottom">
 		<div class="container">
-			<p>&copy; 饿！你就死了吧<a target="_blank" href="http://www.17sucai.com/">@Hafuhafu</a></p>
+			<p>Copyright &copy; 2015.Company name All rights reserved.<a target="_blank" href="http://www.17sucai.com/">&#x7F51;&#x9875;&#x6A21;&#x677F;</a></p>
 		</div>
 	</div>
 </body>
