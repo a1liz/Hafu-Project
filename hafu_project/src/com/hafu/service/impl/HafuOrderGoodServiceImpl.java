@@ -5,6 +5,7 @@ import java.util.List;
 import com.hafu.dao.HafuOrderGoodDao;
 import com.hafu.domain.HafuOrderGoodComment;
 import com.hafu.service.HafuOrderGoodService;
+import com.hafu.vo.OrderGoodPage;
 
 public class HafuOrderGoodServiceImpl implements HafuOrderGoodService{
 
@@ -33,9 +34,17 @@ public class HafuOrderGoodServiceImpl implements HafuOrderGoodService{
 	}
 
 	@Override
-	public List<HafuOrderGoodComment> findOrderGoodByOrderId(int orderid) {
+	public OrderGoodPage findOrderGoodByOrderId(int orderid,int currentPage,int pageSize) {
 		// TODO Auto-generated method stub
-		return hafuOrderGoodDao.findOrderGoodByOrderId(orderid);
+		OrderGoodPage orderGoodPage = new OrderGoodPage();
+		List<HafuOrderGoodComment> list = hafuOrderGoodDao.findOrderGoodByOrderId(orderid, currentPage, pageSize);
+		orderGoodPage.setOrderGoods(list);
+		orderGoodPage.setCurrentPage(currentPage);
+		orderGoodPage.setPageSize(pageSize);
+		int totalCount = hafuOrderGoodDao.findTotalOrderGoodCount();
+		orderGoodPage.setTotalCount(totalCount);
+		orderGoodPage.setTotalPage(totalCount % pageSize == 0 ? totalCount/pageSize : totalCount/pageSize + 1);
+		return orderGoodPage;
 	}
 
 	@Override

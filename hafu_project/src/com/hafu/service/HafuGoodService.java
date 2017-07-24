@@ -3,6 +3,7 @@ package com.hafu.service;
 import java.util.List;
 
 import com.hafu.domain.HafuGoodComment;
+import com.hafu.vo.GoodPage;
 
 /**
  * 商店业务逻辑
@@ -17,7 +18,7 @@ public interface HafuGoodService {
 	// 删除
 	public void delete(int gid);
 	// 根据商店id查找商品
-	public List<HafuGoodComment> findGoodByStoreId(int sid);
+	public GoodPage findGoodByStoreId(int sid, int currentPage, int pageSize);
 	// 根据商品id查找商品
 	public HafuGoodComment findGoodByGoodId(int gid);
 }

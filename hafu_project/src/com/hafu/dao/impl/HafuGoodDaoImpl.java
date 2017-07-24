@@ -33,7 +33,7 @@ public class HafuGoodDaoImpl extends HibernateDaoSupport implements HafuGoodDao 
 	}
 
 	@Override
-	public List<HafuGoodComment> findGoodByStoreId(int sid) {
+	public List<HafuGoodComment> findGoodByStoreId(int sid,int currentPage, int pageSize) {
 		// TODO Auto-generated method stub
 		List list = this.getHibernateTemplate().executeFind(new HibernateCallback() {
 
@@ -42,6 +42,8 @@ public class HafuGoodDaoImpl extends HibernateDaoSupport implements HafuGoodDao 
 				// TODO Auto-generated method stub
 				Query query = session.createQuery("from HafuGoodComment where sid = ?");
 				query.setInteger(0, sid);
+				query.setFirstResult(currentPage);
+				query.setMaxResults(pageSize);
 				List<HafuGoodComment> list = query.list();
 				session.close();
 				return list;
@@ -54,6 +56,13 @@ public class HafuGoodDaoImpl extends HibernateDaoSupport implements HafuGoodDao 
 	public HafuGoodComment findGoodByGoodId(int gid) {
 		// TODO Auto-generated method stub
 		return this.getHibernateTemplate().get(HafuGoodComment.class, gid);
+	}
+
+	@Override
+	public int findTotalGoodCount(int sid) {
+		// TODO Auto-generated method stub
+		Long count = (Long) this.getHibernateTemplate().find("select count(*) from HafuGoodComment").listIterator().next();
+		return count.intValue();
 	}
 
 }
