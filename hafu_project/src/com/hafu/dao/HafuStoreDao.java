@@ -19,6 +19,11 @@ public interface HafuStoreDao {
 	// 根据id去查询商店
 	public HafuStoreComment findStoreById(int sid);
 	// 根据店名去查询商店
-	public List<HafuStoreComment> findStoreByName(String storename);
-	
+	public List<HafuStoreComment> findStoreByName(String storename, int currentPage, int pageSize);
+	// 查询所有商店
+	public List<HafuStoreComment> findAllStore(int currentPage,int pageSize);
+	// 查询所有商店数量
+	public int findTotalStoreCount();
+	// 根据店名查询所有同名商店数量
+	public int findTotalSameNameStoreCount(String storename);
 }

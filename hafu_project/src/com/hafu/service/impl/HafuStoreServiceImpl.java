@@ -5,6 +5,7 @@ import java.util.List;
 import com.hafu.dao.HafuStoreDao;
 import com.hafu.domain.HafuStoreComment;
 import com.hafu.service.HafuStoreService;
+import com.hafu.vo.StorePage;
 
 public class HafuStoreServiceImpl implements HafuStoreService{
 
@@ -38,9 +39,30 @@ public class HafuStoreServiceImpl implements HafuStoreService{
 	}
 
 	@Override
-	public List<HafuStoreComment> findStoreByName(String storename) {
+	public StorePage findStoreByName(String storename,int currentPage, int pageSize) {
 		// TODO Auto-generated method stub
-		return hafuStoreDao.findStoreByName(storename);
+		StorePage storePage = new StorePage();
+		List<HafuStoreComment> list = hafuStoreDao.findStoreByName(storename,currentPage, pageSize);
+		storePage.setStores(list);
+		storePage.setCurrentPage(currentPage);
+		storePage.setPageSize(pageSize);
+		int totalCount = hafuStoreDao.findTotalSameNameStoreCount(storename);
+		storePage.setTotalCount(totalCount);
+		storePage.setTotalPage(totalCount % pageSize == 0 ? totalCount/pageSize : totalCount/pageSize + 1);
+		return storePage;
+	}
+	@Override
+	public StorePage findAllStore(int currentPage, int pageSize) {
+		// TODO Auto-generated method stub
+		StorePage storePage = new StorePage();
+		List<HafuStoreComment> list = hafuStoreDao.findAllStore(currentPage, pageSize);
+		storePage.setStores(list);
+		storePage.setCurrentPage(currentPage);
+		storePage.setPageSize(pageSize);
+		int totalCount = hafuStoreDao.findTotalStoreCount();
+		storePage.setTotalCount(totalCount);
+		storePage.setTotalPage(totalCount % pageSize == 0 ? totalCount/pageSize : totalCount/pageSize + 1);
+		return storePage;
 	}
 
 }

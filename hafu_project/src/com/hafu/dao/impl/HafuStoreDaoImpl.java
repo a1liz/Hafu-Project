@@ -39,7 +39,7 @@ public class HafuStoreDaoImpl extends HibernateDaoSupport implements HafuStoreDa
 	}
 
 	@Override
-	public List<HafuStoreComment> findStoreByName(String storename) {
+	public List<HafuStoreComment> findStoreByName(String storename, int currentPage, int pageSize) {
 		// TODO Auto-generated method stub
 		List list = this.getHibernateTemplate().executeFind(new HibernateCallback() {
 
@@ -48,12 +48,56 @@ public class HafuStoreDaoImpl extends HibernateDaoSupport implements HafuStoreDa
 				// TODO Auto-generated method stub
 				Query query = session.createQuery("from HafuStoreComment where storename = ?");
 				query.setString(0, storename);
+				query.setFirstResult(currentPage);
+				query.setMaxResults(pageSize);
 				List<HafuStoreComment> list = query.list();
 				session.close();
 				return list;
 			}
 		});
 		return list;
+	}
+
+	@Override
+	public List<HafuStoreComment> findAllStore(int currentPage, int pageSize) {
+		// TODO Auto-generated method stub
+		List list = this.getHibernateTemplate().executeFind(new HibernateCallback() {
+
+			@Override
+			public Object doInHibernate(Session session) throws HibernateException, SQLException {
+				// TODO Auto-generated method stub
+				Query query = session.createQuery("from HafuStoreComment");
+				query.setFirstResult(currentPage);
+				query.setMaxResults(pageSize);
+				List<HafuStoreComment> list = query.list();
+				return list;
+			}
+		});
+		return list;
+	}
+
+	@Override
+	public int findTotalStoreCount() {
+		// TODO Auto-generated method stub
+		Long count = (Long) this.getHibernateTemplate().find("select count(*) from HafuStoreComment").listIterator().next();
+		return count.intValue();
+	}
+
+	@Override
+	public int findTotalSameNameStoreCount(String storename) {
+		// TODO Auto-generated method stub
+//		Long count = (Long) this.getHibernateTemplate().executeFind(new HibernateCallback() {
+//
+//			@Override
+//			public Object doInHibernate(Session session) throws HibernateException, SQLException {
+//				// TODO Auto-generated method stub
+//				Query query = session.createQuery("select count(*) from HafuStoreComment where storename = ?");
+//				query.setString(0, storename);
+//				return query.list().get(0);
+//			}
+//		});
+		// 待修改
+		return 0; 
 	}
 
 }
