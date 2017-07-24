@@ -56,7 +56,7 @@ function time()
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 					</button>
-					<h1 class="navbar-brand">DICOS<a  href="index.html"></a></h1>
+					<h1 class="navbar-brand">饿死了么<a  href="index.html"></a></h1>
 				</div>
 				<!--navbar-header-->
 				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
