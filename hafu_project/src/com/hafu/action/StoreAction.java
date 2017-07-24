@@ -35,6 +35,5 @@ public class StoreAction extends ActionSupport implements ModelDriven<HafuStoreC
 		StorePage storePage = hafuStoreService.findAllStore(currentPage, pageSize);
 		ServletActionContext.getRequest().setAttribute("storePage", storePage);
 		return SUCCESS;
-		
 	}
 }

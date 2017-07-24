@@ -451,7 +451,7 @@
 					</div>
 				</div>
 				<div class="col-md-3 gallery-grid ">
-					<a href="products.html"><img src="images/di7.png" class="img-responsive" alt=""/>
+					<a href="products.html"><img src="images/di13.png" class="img-responsive" alt=""/>
 						<div class="gallery-info">
 							<p><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span> view</p>
 							<a class="shop" href="single.html">SHOP NOW</a>
@@ -459,7 +459,7 @@
 						</div>
 					</a>
 					<div class="galy-info">
-						<p>薯条小）</p>
+						<p>鸡块</p>
 						<div class="product-info-cust prt_name">
 															
 							<span class="item_price">¥5.00</span>
@@ -498,7 +498,7 @@
 	
 	<div style = "text-align:right;">
 <div class="df">
-			<a href="checkout.jsp">查看购物车</a>
+			<a href="checkout1.jsp">查看购物车</a>
 	<div class="df-text">			
 		<img src="images/right1.png" alt=""/>	
 	</div>
