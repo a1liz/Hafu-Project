@@ -498,7 +498,7 @@
 	
 	<div style = "text-align:right;">
 <div class="df">
-			<a href="checkout1.jsp">查看购物车</a>
+			<a href="checkout.jsp">查看购物车</a>
 	<div class="df-text">			
 		<img src="images/right1.png" alt=""/>	
 	</div>

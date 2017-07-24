@@ -1,4 +1,6 @@
-<!DOCTYPE html>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <title>Checkout</title>
@@ -340,10 +342,10 @@
 						<h3><a href="#"> 脆皮鸡腿 <!-- </a><span></span></h3>  -->
 						 <ul class="qty">
 							<li><p>number:</p></li>
-							<li><p>< 1 ></p></li>
+							<li><p>< 2 ></p></li>
 						</ul> 
 						<div class="delivery">
-							<p>价格：¥8.00</p>
+							<p>价格：¥8.00 * 2 = ¥16.00</p>
 							<span>Delivered in 30 minutes</span>
 							<div class="clearfix"></div>
 						</div>	

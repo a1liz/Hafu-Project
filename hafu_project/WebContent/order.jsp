@@ -24,7 +24,7 @@ function time()
   var hours=now.getHours();
   var minutes=now.getMinutes();
   if(minutes<10){
-	  minute="0"+minute;
+	  minutes="0"+minutes;
   }
   var arrivehours=hours;
   var arriveminutes=minutes+30;
