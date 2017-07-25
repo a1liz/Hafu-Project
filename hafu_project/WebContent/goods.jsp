@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+ <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -218,8 +219,9 @@
 						</div>
 					</div>
 				</div>
+				<c:forEach items="${requestScope.goodPage.goods}" var="good">
 				<div class="col-md-3 gallery-grid ">
-					<a href="products.html"><img src="images/di2.png" class="img-responsive" alt=""/>
+					<a href="products.html"><img src="${good.icon}" class="img-responsive" alt=""/>
 						<div class="gallery-info">
 							<p><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span> view</p>
 							<a class="shop" href="single.html">SHOP NOW</a>
@@ -227,47 +229,11 @@
 						</div>
 					</a>
 					<div class="galy-info">
-						<p>脆皮鸡腿堡</p>
-						<div class="product-info-cust prt_name">
-															
-							<span class="item_price">¥15.00</span>
-							<div class="ofr">
-								<p class="pric1"><del>¥20.00</del></p>
-								<p class="disc">[25% Off]</p>
-							</div>
-							<input type="text" class="item_quantity" value="1" />
-							<input type="button" onclick="alert('呐，已添加购物车')" class="item_add items" value="Add">
-							<div class="clearfix"> </div>
-						</div>
-						<div class="galry">
-							<div class="prices">
-								<h5 class="item_price">¥15.00</h5>
-							</div>
-							<div class="rating">
-								<span>★</span>
-								<span>★</span>
-								<span>★</span>
-								<span>★</span>
-								<span>★</span>
-							</div>						
-							<div class="clearfix"></div>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-3 gallery-grid ">
-					<a href="products.html"><img src="images/di3.png" class="img-responsive" alt=""/>
-						<div class="gallery-info">
-							<p><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span> view</p>
-							<a class="shop" href="single.html">SHOP NOW</a>
-							<div class="clearfix"> </div>
-						</div>
-					</a>
-					<div class="galy-info">
-						<p>至尊鸡腿堡</p>
+						<p>${good.goodname}</p>
 						
 						<div class="product-info-cust prt_name">
 															
-							<span class="item_price">¥12.00</span>
+							<span class="item_price">¥ ${good.goodPrice}</span>
 							<div class="ofr">
 								<p class="pric1"><del>¥15.00</del></p>
 								<p class="disc">[20% Off]</p>
@@ -279,7 +245,7 @@
 						
 						<div class="galry">
 							<div class="prices">
-								<h5 class="item_price">¥14.00</h5>
+								<h5 class="item_price">¥ ${good.goodPrice}</h5>
 							</div>
 							
 							<div class="rating">
@@ -293,199 +259,8 @@
 						</div>
 					</div>
 				</div>
-				<div class="col-md-3 gallery-grid ">
-					<a href="products.html"><img src="images/di4.png" class="img-responsive" alt=""/>
-						<div class="gallery-info">
-							<p><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span> view</p>
-							<a class="shop" href="single.html">SHOP NOW</a>
-							<div class="clearfix"> </div>
-						</div>
-					</a>
-					<div class="galy-info">
-						<p>脆皮鸡腿</p>
-						<div class="product-info-cust prt_name">
-															
-							<span class="item_price">¥8.00</span>
-							<div class="ofr">
-								<p class="pric1"><del>¥10.00</del></p>
-								<p class="disc">[20% Off]</p>
-							</div>
-							<input type="text" class="item_quantity" value="1" />
-							<input type="button" onclick="alert('呐，已添加购物车')" class="item_add items" value="Add">
-							<div class="clearfix"> </div>
-						</div>
-						<div class="galry">
-							<div class="prices">
-								<h5 class="item_price">¥8.00</h5>
-							</div>
-							<div class="rating">
-								<span>☆</span>
-								<span>★</span>
-								<span>★</span>
-								<span>★</span>
-								<span>★</span>
-							</div>						
-							<div class="clearfix"></div>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-3 gallery-grid ">
-					<a href="products.html"><img src="images/di6.png" class="img-responsive"width="299px" height="315px alt=""/>
-						<div class="gallery-info">
-							<p><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span> view</p>
-							<a class="shop" href="single.html">SHOP NOW</a>
-							<div class="clearfix"> </div>
-						</div>
-					</a>
-					<div class="galy-info">
-						<p>巧克力圣代</p>
-						
-						
-						
-						<div class="product-info-cust prt_name">
-															
-							<span class="item_price">¥8.00</span>
-							<div class="ofr">
-								<p class="pric1"><del>¥10.00</del></p>
-								<p class="disc">[20% Off]</p>
-							</div>
-							<input type="text" class="item_quantity" value="1" />
-							<input type="button" onclick="alert('呐，已添加购物车')" class="item_add items" value="Add">
-							<div class="clearfix"> </div>
-						</div>
-						
-						
-						<div class="galry">
-							<div class="prices">
-								<h5 class="item_price">¥8.00</h5>
-							</div>
-							
-							
-							
-							<div class="rating">
-								<span>☆</span>
-								<span>★</span>
-								<span>★</span>
-								<span>★</span>
-								<span>★</span>
-							</div>						
-							<div class="clearfix"></div>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-3 gallery-grid ">
-					<a href="products.html"><img src="images/di10.png" class="img-responsive" alt=""/>
-						<div class="gallery-info">
-							<p><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span> view</p>
-							<a class="shop" href="single.html">SHOP NOW</a>
-							<div class="clearfix"> </div>
-						</div>
-					</a>
-					<div class="galy-info">
-						<p>摩卡雪慕斯</p>
-						
-						
-					<div class="product-info-cust prt_name">
-														
-						<span class="item_price">¥18.00</span>
-						<div class="ofr">
-							<p class="pric1"><del>¥36.00</del></p>
-							<p class="disc">[50% Off]</p>
-						</div>
-						<input type="text" class="item_quantity" value="1" />
-						<input type="button" onclick="alert('呐，已添加购物车')" class="item_add items" value="Add">
-						<div class="clearfix"> </div>
-					</div>
-						
-						
-						<div class="galry">
-							<div class="prices">
-								<h5 class="item_price">¥18.00</h5>
-							</div>
-							<div class="rating">
-								<span>☆</span>
-								<span>★</span>
-								<span>★</span>
-								<span>★</span>
-								<span>★</span>
-							</div>						
-							<div class="clearfix"></div>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-3 gallery-grid ">
-					<a href="products.html"><img src="images/di11.png" class="img-responsive" alt=""/>
-						<div class="gallery-info">
-							<p><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span> view</p>
-							<a class="shop" href="single.html">SHOP NOW</a>
-							<div class="clearfix"> </div>
-						</div>
-					</a>
-					<div class="galy-info">
-						<p>鸡柳蛋手卷</p>
-						
-						<div class="product-info-cust prt_name">
-															
-							<span class="item_price">¥15.00</span>
-							<div class="ofr">
-								<p class="pric1"><del>¥20.00</del></p>
-								<p class="disc">[75% Off]</p>
-							</div>
-							<input type="text" class="item_quantity" value="1" />
-														<input type="button" onclick="alert('呐，已添加购物车')" class="item_add items" value="Add">
-							<div class="clearfix"> </div>
-						</div>
-						<div class="galry">
-							<div class="prices">
-								<h5 class="item_price">¥15.00</h5>
-							</div>
-							<div class="rating">
-								<span>☆</span>
-								<span>★</span>
-								<span>★</span>
-								<span>★</span>
-								<span>★</span>
-							</div>						
-							<div class="clearfix"></div>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-3 gallery-grid ">
-					<a href="products.html"><img src="images/di13.png" class="img-responsive" alt=""/>
-						<div class="gallery-info">
-							<p><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span> view</p>
-							<a class="shop" href="single.html">SHOP NOW</a>
-							<div class="clearfix"> </div>
-						</div>
-					</a>
-					<div class="galy-info">
-						<p>鸡块</p>
-						<div class="product-info-cust prt_name">
-															
-							<span class="item_price">¥5.00</span>
-							<div class="ofr">
-								<p class="pric1"><del>¥6.00</del></p>
-								<p class="disc">[10% Off]</p>
-							</div>
-							<input type="text" class="item_quantity" value="1" />
-							<input type="button" onclick="alert('呐，已添加购物车')" class="item_add items" value="Add">
-							<div class="clearfix"> </div>
-						</div>
-						<div class="galry">
-							<div class="prices">
-								<h5 class="item_price">¥5.00</h5>
-							</div>
-							<div class="rating">
-								<span>☆</span>
-								<span>★</span>
-								<span>★</span>
-								<span>★</span>
-								<span>★</span>
-							</div>						
-							<div class="clearfix"></div>
-						</div>
-					</div>
-				</div>
+				</c:forEach>
+				
 			</div>	
 		</div>
 	</div>
