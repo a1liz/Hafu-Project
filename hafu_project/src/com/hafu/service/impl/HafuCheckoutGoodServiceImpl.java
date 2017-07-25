@@ -53,7 +53,7 @@ public class HafuCheckoutGoodServiceImpl implements HafuCheckoutGoodService{
 		return hafuCheckoutGoodDao;
 	}
 
-	public void setHafuCheckoutDao(HafuCheckoutGoodDao hafuCheckoutGoodDao) {
+	public void setHafuCheckoutGoodDao(HafuCheckoutGoodDao hafuCheckoutGoodDao) {
 		this.hafuCheckoutGoodDao = hafuCheckoutGoodDao;
 	}
 	

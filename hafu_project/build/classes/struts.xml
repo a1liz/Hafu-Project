@@ -18,6 +18,10 @@
 		<result name="success">store.jsp</result>
 		<result name="fail">searchfailed.jsp</result>
 	</action>
+	<action name="good_search" class="com.hafu.action.GoodAction" method="search">
+		<result name="success">goods.jsp</result>
+		<result name="fail">index.jsp</result>
+	</action>
     </package>
 
 </struts>

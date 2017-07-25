@@ -131,7 +131,7 @@
   <div class="home_main">
 	   <div class="col-md-5 col-sm-5 col-xs-5 img3 img-grid ">
 		    <div class="img_text_w3ls text-center">
-				<h4><a href="goods.jsp"><font color="	#FFFFFF">DICOS.</a> </h4>
+				<h4><a href="good_search?sid=1"><font color="	#FFFFFF">DICOS.</a> </h4>
 				<span> </span>
 				<p>开心就要咔嚓咔嚓 </p>
 			  </div>

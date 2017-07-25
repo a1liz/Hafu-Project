@@ -49,6 +49,8 @@
 				<value>com/hafu/domain/HafuStoreComment.hbm.xml</value>
 				<value>com/hafu/domain/HafuUserComment.hbm.xml</value>
 				<value>com/hafu/domain/HafuUserProfileComment.hbm.xml</value>
+				<value>com/hafu/domain/HafuCheckoutComment.hbm.xml</value>
+				<value>com/hafu/domain/HafuCheckoutGoodComment.hbm.xml</value>
 			</list>
 		</property> 
 	</bean>
@@ -56,6 +58,9 @@
 	<!-- 配置Action -->
 	<bean id="com.hafu.action.LoginAction" class="com.hafu.action.LoginAction" scope="prototype"/>
 	<bean id="com.hafu.action.SignupAction" class="com.hafu.action.SignupAction" scope="prototype"/>
+	<bean id="com.hafu.action.GoodAction" class="com.hafu.action.GoodAction" scope="prototype">
+	<property name="hafuGoodService" ref="hafuGoodService"></property>
+	</bean>
 	
 	<!-- Service的配置 -->
 	<bean id="hafuGoodService" class="com.hafu.service.impl.HafuGoodServiceImpl">
@@ -73,6 +78,12 @@
 	<bean id="hafuUserProfileService" class="com.hafu.service.impl.HafuUserProfileServiceImpl">
 	<property name="hafuUserProfileDao" ref="hafuUserProfileDao"/>
 	</bean>
+	<bean id="hafuCheckoutService" class="com.hafu.service.impl.HafuCheckoutServiceImpl">
+	<property name="hafuCheckoutDao" ref="hafuCheckoutDao"/>
+	</bean>
+	<bean id="hafuCheckoutGoodService" class="com.hafu.service.impl.HafuCheckoutGoodServiceImpl">
+	<property name="hafuCheckoutGoodDao" ref="hafuCheckoutGoodDao"/>
+	</bean>
 	
 	<!-- DAO的配置 -->
 	<bean id="hafuGoodDao" class="com.hafu.dao.impl.HafuGoodDaoImpl">
@@ -88,6 +99,12 @@
 		<property name="sessionFactory" ref="sessionFactory"></property>
 	</bean>
 	<bean id="hafuUserProfileDao" class="com.hafu.dao.impl.HafuUserProfileDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<bean id="hafuCheckoutDao" class="com.hafu.dao.impl.HafuCheckoutDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<bean id="hafuCheckoutGoodDao" class="com.hafu.dao.impl.HafuCheckoutGoodDaoImpl">
 		<property name="sessionFactory" ref="sessionFactory"></property>
 	</bean>
 	

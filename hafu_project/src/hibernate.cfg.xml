@@ -51,6 +51,9 @@
 	<mapping resource="com/hafu/domain/HafuStoreComment.hbm.xml" />
 	<mapping resource="com/hafu/domain/HafuUserComment.hbm.xml" />
 	<mapping resource="com/hafu/domain/HafuUserProfileComment.hbm.xml" />
+	<mapping resource="com/hafu/domain/HafuCheckoutComment.hbm.xml" />
+	<mapping resource="com/hafu/domain/HafuCheckoutGoodComment.hbm.xml" />
+	
 
 
 </session-factory>

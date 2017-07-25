@@ -14,6 +14,12 @@ public class GoodAction extends ActionSupport implements ModelDriven<HafuGoodCom
 	private HafuGoodComment hafuGoodComment = new HafuGoodComment();
 	private HafuGoodService hafuGoodService;
 	
+	public HafuGoodService getHafuGoodService() {
+		return hafuGoodService;
+	}
+	public void setHafuGoodService(HafuGoodService hafuGoodService) {
+		this.hafuGoodService = hafuGoodService;
+	}
 	@Override
 	public HafuGoodComment getModel() {
 		// TODO Auto-generated method stub
@@ -32,7 +38,12 @@ public class GoodAction extends ActionSupport implements ModelDriven<HafuGoodCom
 		this.pageSize = pageSize;
 	}
 	
-	public String search(int sid) {
+	public String search() {
+		int sid = 1;
+		String tmp = ServletActionContext.getRequest().getParameter("sid");
+		if (tmp != null) {
+			sid = Integer.parseInt(tmp);
+		}
 		GoodPage goodPage = hafuGoodService.findGoodByStoreId(sid, currentPage, pageSize);
 		ServletActionContext.getRequest().setAttribute("goodPage", goodPage);
 		return SUCCESS;
