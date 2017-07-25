@@ -78,19 +78,19 @@ public class HafuCheckoutGoodDaoImpl extends HibernateDaoSupport implements Hafu
 	@Override
 	public int findTotalOrderGoodCount(int cid) {
 		// TODO Auto-generated method stub
-		List<Integer> list = this.getHibernateTemplate().executeFind(new HibernateCallback() {
+		List<Long> list = this.getHibernateTemplate().executeFind(new HibernateCallback() {
 
 			@Override
 			public Object doInHibernate(Session session) throws HibernateException, SQLException {
 				// TODO Auto-generated method stub
 				Query query = session.createQuery("select count(*) from HafuCheckoutGoodComment where cid = ?");
 				query.setInteger(0, cid);
-				List<Integer> list = query.list();
+				List<Long> list = query.list();
 				session.close();
 				return list;
 			}
 		});
-		return list.get(0);
+		return list.get(0).intValue();
 	}
 
 }

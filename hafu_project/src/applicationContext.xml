@@ -88,6 +88,7 @@
 	</bean>
 	<bean id="hafuCheckoutGoodService" class="com.hafu.service.impl.HafuCheckoutGoodServiceImpl">
 	<property name="hafuCheckoutGoodDao" ref="hafuCheckoutGoodDao"/>
+	<property name="hafuGoodDao" ref="hafuGoodDao"></property>
 	</bean>
 	
 	<!-- DAO的配置 -->

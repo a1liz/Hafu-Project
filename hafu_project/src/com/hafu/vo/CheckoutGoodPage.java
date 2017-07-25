@@ -3,13 +3,14 @@ package com.hafu.vo;
 import java.util.List;
 
 import com.hafu.domain.HafuCheckoutGoodComment;
+import com.hafu.domain.HafuCheckoutGoodContent;
 
 public class CheckoutGoodPage {
 	private int pageSize; // 每页显示多少条记录
 	private int currentPage; // 当前页
 	private int totalCount; // 总条数
 	private int totalPage; //总页数 (totalCount % pageSize == 0 ? totalCount/pageSize : totalCount/pageSize + 1)
-	private List<HafuCheckoutGoodComment> checkoutGoods;
+	private List<HafuCheckoutGoodContent> checkoutGoods;
 	public int getPageSize() {
 		return pageSize;
 	}
@@ -34,10 +35,10 @@ public class CheckoutGoodPage {
 	public void setTotalPage(int totalPage) {
 		this.totalPage = totalPage;
 	}
-	public List<HafuCheckoutGoodComment> getCheckoutGoods() {
+	public List<HafuCheckoutGoodContent> getCheckoutGoods() {
 		return checkoutGoods;
 	}
-	public void setCheckoutGoods(List<HafuCheckoutGoodComment> checkoutGoods) {
+	public void setCheckoutGoods(List<HafuCheckoutGoodContent> checkoutGoods) {
 		this.checkoutGoods = checkoutGoods;
 	}
 }

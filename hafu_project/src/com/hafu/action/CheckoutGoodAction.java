@@ -68,8 +68,9 @@ public class CheckoutGoodAction extends ActionSupport implements ModelDriven<Haf
 		return SUCCESS;
 	}
 	
-	public String search(int cid) {
-		CheckoutGoodPage checkoutGoodPage = hafuCheckoutGoodService.findCheckoutGoodByCheckoutId(cid, currentPage, pageSize);
+	public String search() {
+		HafuCheckoutComment hafuCheckoutComment = (HafuCheckoutComment) ServletActionContext.getRequest().getSession().getAttribute("hafuCheckoutComment");
+		CheckoutGoodPage checkoutGoodPage = hafuCheckoutGoodService.findCheckoutGoodByCheckoutId(hafuCheckoutComment.getCid(), currentPage, pageSize);
 		ServletActionContext.getRequest().setAttribute("checkoutGoodPage", checkoutGoodPage);
 		return SUCCESS;
 	}

@@ -235,8 +235,8 @@
 															
 							<span class="item_price">¥ ${good.goodPrice}</span>
 							<div class="ofr">
-								<p class="pric1"><del>¥15.00</del></p>
-								<p class="disc">[20% Off]</p>
+								<p class="pric1"><del>¥ ${good.goodPrice}</del></p>
+								<p class="disc">[0% Off]</p>
 							</div>
 							<form action ="checkoutGood?gid=${good.gid}" name="form${good.gid}" method="post">
 							<input type="text" name="goodnumber" class="item_quantity" value="1" />
@@ -275,7 +275,7 @@
 	
 	<div style = "text-align:right;">
 <div class="df">
-			<a href="checkout.jsp">查看购物车</a>
+			<a href="checkoutGood_search">查看购物车</a>
 	<div class="df-text">			
 		<img src="images/right1.png" alt=""/>	
 	</div>

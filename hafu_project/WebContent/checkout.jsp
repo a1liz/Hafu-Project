@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -286,7 +287,9 @@
 	</div>
 	<!--//header-->
 	<!--cart-items-->
-	<c:forEach items="${requestScope.goodPage.dataList}" var="goods">
+	<
+	
+	
 	<div class="cart-items">
 		<div class="container">
 			<h2>My Shopping Cart</h2>
@@ -301,51 +304,21 @@
 			<div class="cart-header">
 				<div class="close1"> </div>
 				
-				<div class="cart-sec simpleCart_shelfItem">
-					<div class="cart-item cyc">
-						 <img src="images/di3.png" class="img-responsive" alt="">
-					</div>
-					<div class="cart-item-info">
-						<h3><a href="#"> 至尊鸡腿堡 <!-- </a><span></span></h3>  -->
-						 <ul class="qty">
-							<li><p>number:</p></li>
-							<li><p>< 1 ></p></li>
-						</ul> 
-						<div class="delivery">
-							<p>价格：¥12.00</p>
-							<span>Delivered in 30 minutes</span>
-							<div class="clearfix"></div>
-						</div>	
-					</div>
-					<div class="clearfix"></div>
-				</div>
-			</div>
-			
-			
-			
-			<script>$(document).ready(function(c) {
-				$('.close1').on('click', function(c){
-					$('.cart-header').fadeOut('slow', function(c){
-						$('.cart-header').remove();
-					});
-					});	  
-				});
-			</script>
-			<div class="cart-header">
-				<div class="close1"> </div>
+				
+				<c:forEach items="${requestScope.checkoutGoodPage.checkoutGoods}" var="checkoutGood">
 				
 				<div class="cart-sec simpleCart_shelfItem">
 					<div class="cart-item cyc">
-						 <img src="images/di4.png" class="img-responsive" alt="">
+						 <img src="${checkoutGood.icon}" class="img-responsive" alt="">
 					</div>
 					<div class="cart-item-info">
-						<h3><a href="#"> 脆皮鸡腿 <!-- </a><span></span></h3>  -->
+						<h3><a href="#"> ${checkoutGood.goodname} <!-- </a><span></span></h3>  -->
 						 <ul class="qty">
 							<li><p>number:</p></li>
-							<li><p>< 2 ></p></li>
+							<li><p>< ${checkoutGood.goodnumber} ></p></li>
 						</ul> 
 						<div class="delivery">
-							<p>价格：¥8.00 * 2 = ¥16.00</p>
+							<p>价格：¥ ${checkoutGood.goodPrice }</p>
 							<span>Delivered in 30 minutes</span>
 							<div class="clearfix"></div>
 						</div>	
@@ -353,6 +326,9 @@
 					<div class="clearfix"></div>
 				</div>
 			</div>
+			
+			
+
 			
 		</c:forEach>
 			
@@ -434,7 +410,7 @@
 	<!--footer-->
 	<div class="footer-bottom">
 		<div class="container">
-			<p>Copyright &copy; 2015.Company name All rights reserved.<a target="_blank" href="http://www.17sucai.com/">&#x7F51;&#x9875;&#x6A21;&#x677F;</a></p>
+			<p>&copy; 饿！你就死了吧&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<a target="_blank" href="">hafuhafu </a></p>
 		</div>
 	</div>
 </body>

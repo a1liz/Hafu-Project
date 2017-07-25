@@ -25,6 +25,9 @@
 	<action name="checkoutGood" class="com.hafu.action.CheckoutGoodAction" method="add">
 		<result name="success" type="redirectAction">good_search?sid=1</result>
 	</action>
+	<action name="checkoutGood_search" class="com.hafu.action.CheckoutGoodAction" method="search">
+		<result name="success">checkout.jsp</result>
+	</action>
     </package>
 
 </struts>
