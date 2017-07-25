@@ -68,8 +68,12 @@ public class HafuCheckoutGoodDaoImpl extends HibernateDaoSupport implements Hafu
 				return list;
 			}
 		});
-		return list.get(0);
-	}
+		if (list.size() == 0) {
+			return null;
+		}
+		else 
+			return list.get(0);
+	}	
 
 	@Override
 	public int findTotalOrderGoodCount(int cid) {

@@ -11,6 +11,10 @@ public class HafuCheckoutGoodServiceImpl implements HafuCheckoutGoodService{
 
 	private HafuCheckoutGoodDao hafuCheckoutGoodDao;
 
+	public HafuCheckoutGoodDao getHafuCheckoutGoodDao() {
+		return hafuCheckoutGoodDao;
+	}
+
 	@Override
 	public void add(HafuCheckoutGoodComment checkoutGood) {
 		// TODO Auto-generated method stub

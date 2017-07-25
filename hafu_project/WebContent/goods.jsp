@@ -238,8 +238,10 @@
 								<p class="pric1"><del>¥15.00</del></p>
 								<p class="disc">[20% Off]</p>
 							</div>
-							<input type="text" class="item_quantity" value="1" />
-							<input type="button" onclick="alert('呐，已添加购物车')" class="item_add items" value="Add">
+							<form action ="checkoutGood?gid=${good.gid}" name="form${good.gid}" method="post">
+							<input type="text" name="goodnumber" class="item_quantity" value="1" />
+							<input type="submit" onclick="alert('呐，已添加购物车')" class="item_add items" value="Add">
+							</form>
 							<div class="clearfix"> </div>
 						</div>
 						

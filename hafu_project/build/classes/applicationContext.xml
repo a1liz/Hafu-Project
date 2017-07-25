@@ -56,10 +56,15 @@
 	</bean>
 	
 	<!-- 配置Action -->
-	<bean id="com.hafu.action.LoginAction" class="com.hafu.action.LoginAction" scope="prototype"/>
+	<bean id="com.hafu.action.LoginAction" class="com.hafu.action.LoginAction" scope="prototype">
+	<property name="hafuCheckoutService" ref="hafuCheckoutService"></property>
+	</bean>
 	<bean id="com.hafu.action.SignupAction" class="com.hafu.action.SignupAction" scope="prototype"/>
 	<bean id="com.hafu.action.GoodAction" class="com.hafu.action.GoodAction" scope="prototype">
 	<property name="hafuGoodService" ref="hafuGoodService"></property>
+	</bean>
+	<bean id="com.hafu.action.CheckoutGoodAction" class="com.hafu.action.CheckoutGoodAction" scope="prototype">
+	<property name="hafuCheckoutGoodService" ref="hafuCheckoutGoodService"></property>
 	</bean>
 	
 	<!-- Service的配置 -->

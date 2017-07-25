@@ -22,6 +22,9 @@
 		<result name="success">goods.jsp</result>
 		<result name="fail">index.jsp</result>
 	</action>
+	<action name="checkoutGood" class="com.hafu.action.CheckoutGoodAction" method="add">
+		<result name="success" type="redirectAction">good_search?sid=1</result>
+	</action>
     </package>
 
 </struts>
