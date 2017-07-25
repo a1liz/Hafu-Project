@@ -20,6 +20,6 @@ public interface HafuOrderGoodService {
 	// 根据订单id查询订单详情
 	public OrderGoodPage findOrderGoodByOrderId(int orderid, int currentPage, int pageSize);
 	// 根据订单id和商品id查询某一订单对应商品详情
-	public HafuOrderGoodComment findOrderGoddById(int orderid,int gid);
+	public HafuOrderGoodComment findOrderGoodById(int orderid,int gid);
 
 }

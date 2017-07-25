@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated 2017-7-25 11:03:09 by Hibernate Tools 5.2.3.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" default-access="property" default-cascade="none" default-lazy="true">
+    <class catalog="hafu_db" dynamic-insert="false" dynamic-update="false" mutable="true" name="com.nku.liz.domain.HafuCheckoutGoodComment" optimistic-lock="version" polymorphism="implicit" select-before-update="false" table="hafu_checkoutGood_comment">
+        <composite-id class="com.nku.liz.domain.HafuCheckoutGoodCommentId" mapped="false" name="id" unsaved-value="undefined">
+            <key-property name="cid" type="int">
+                <column name="cid"/>
+            </key-property>
+            <key-property name="gid" type="int">
+                <column name="gid"/>
+            </key-property>
+        </composite-id>
+        <many-to-one class="com.nku.liz.domain.HafuCheckoutComment" embed-xml="true" fetch="select" insert="false" name="hafuCheckoutComment" not-found="exception" optimistic-lock="true" unique="false" update="false">
+            <column name="cid" not-null="true"/>
+        </many-to-one>
+        <property generated="never" lazy="false" name="goodnumber" optimistic-lock="true" type="int" unique="false">
+            <column name="goodnumber" not-null="true"/>
+        </property>
+    </class>
+</hibernate-mapping>

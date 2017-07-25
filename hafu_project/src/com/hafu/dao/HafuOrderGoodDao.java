@@ -19,7 +19,7 @@ public interface HafuOrderGoodDao {
 	// 根据订单id查询订单详情
 	public List<HafuOrderGoodComment> findOrderGoodByOrderId(int orderid, int currentPage, int pageSize);
 	// 根据订单id和商品id查询某一订单对应商品详情
-	public HafuOrderGoodComment findOrderGoddById(int orderid,int gid);
+	public HafuOrderGoodComment findOrderGoodById(int orderid,int gid);
 	// 根据订单id查询订单所有商品种类数量
-	public int findTotalOrderGoodCount();
+	public int findTotalOrderGoodCount(int orderid);
 }

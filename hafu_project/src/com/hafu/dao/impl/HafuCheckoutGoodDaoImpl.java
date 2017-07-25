@@ -9,62 +9,61 @@ import org.hibernate.Session;
 import org.springframework.orm.hibernate3.HibernateCallback;
 import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 
-import com.hafu.dao.HafuOrderGoodDao;
-import com.hafu.domain.HafuOrderGoodComment;
+import com.hafu.dao.HafuCheckoutGoodDao;
+import com.hafu.domain.HafuCheckoutGoodComment;
 
-public class HafuOrderGoodDaoImpl extends HibernateDaoSupport implements HafuOrderGoodDao {
+public class HafuCheckoutGoodDaoImpl extends HibernateDaoSupport implements HafuCheckoutGoodDao{
 
 	@Override
-	public void add(HafuOrderGoodComment orderGood) {
+	public void add(HafuCheckoutGoodComment checkoutGood) {
 		// TODO Auto-generated method stub
-		this.getHibernateTemplate().save(orderGood);
+		this.getHibernateTemplate().save(checkoutGood);
 	}
 
 	@Override
-	public void update(HafuOrderGoodComment orderGood) {
+	public void update(HafuCheckoutGoodComment checkoutGood) {
 		// TODO Auto-generated method stub
-		this.getHibernateTemplate().update(orderGood);
+		this.getHibernateTemplate().update(checkoutGood);
 	}
 
 	@Override
-	public void delete(int orderid, int gid) {
+	public void delete(int cid, int gid) {
 		// TODO Auto-generated method stub
-		this.getHibernateTemplate().delete(this.findOrderGoodById(orderid, gid));
+		this.getHibernateTemplate().delete(this.findCheckoutGood(cid, gid));
 	}
 
 	@Override
-	public List<HafuOrderGoodComment> findOrderGoodByOrderId(int orderid, int currentPage, int pageSize) {
+	public List<HafuCheckoutGoodComment> findCheckoutGoodByCheckoutId(int cid, int currentPage, int pageSize) {
 		// TODO Auto-generated method stub
 		List list = this.getHibernateTemplate().executeFind(new HibernateCallback() {
 
 			@Override
 			public Object doInHibernate(Session session) throws HibernateException, SQLException {
 				// TODO Auto-generated method stub
-				Query query = session.createQuery("from HafuOrderGoodComment where orderid = ?");
-				query.setInteger(0, orderid);
+				Query query = session.createQuery("from HafuCheckoutGoodComment where cid = ?");
+				query.setInteger(0, cid);
 				query.setFirstResult(currentPage);
 				query.setMaxResults(pageSize);
-				List<HafuOrderGoodComment> list = query.list();
+				List<HafuCheckoutGoodComment> list = query.list();
 				session.close();
 				return list;
 			}
-			
 		});
 		return list;
 	}
 
 	@Override
-	public HafuOrderGoodComment findOrderGoodById(int orderid, int gid) {
+	public HafuCheckoutGoodComment findCheckoutGood(int cid, int gid) {
 		// TODO Auto-generated method stub
-		List<HafuOrderGoodComment> list = this.getHibernateTemplate().executeFind(new HibernateCallback() {
+		List<HafuCheckoutGoodComment> list = this.getHibernateTemplate().executeFind(new HibernateCallback() {
 
 			@Override
 			public Object doInHibernate(Session session) throws HibernateException, SQLException {
 				// TODO Auto-generated method stub
-				Query query = session.createQuery("from HafuOrderGoodComment where orderid = ? and gid = ?");
-				query.setInteger(0, orderid);
+				Query query = session.createQuery("from HafuCheckoutGoodComment where cid = ? and gid = ?");
+				query.setInteger(0, cid);
 				query.setInteger(1, gid);
-				List<HafuOrderGoodComment> list = query.list();
+				List<HafuCheckoutGoodComment> list = query.list();
 				session.close();
 				return list;
 			}
@@ -73,15 +72,15 @@ public class HafuOrderGoodDaoImpl extends HibernateDaoSupport implements HafuOrd
 	}
 
 	@Override
-	public int findTotalOrderGoodCount(int orderid) {
+	public int findTotalOrderGoodCount(int cid) {
 		// TODO Auto-generated method stub
 		List<Integer> list = this.getHibernateTemplate().executeFind(new HibernateCallback() {
 
 			@Override
 			public Object doInHibernate(Session session) throws HibernateException, SQLException {
 				// TODO Auto-generated method stub
-				Query query = session.createQuery("select count(*) from HafuOrderGoodComment where cid = ?");
-				query.setInteger(0, orderid);
+				Query query = session.createQuery("select count(*) from HafuCheckoutGoodComment where cid = ?");
+				query.setInteger(0, cid);
 				List<Integer> list = query.list();
 				session.close();
 				return list;
@@ -89,6 +88,5 @@ public class HafuOrderGoodDaoImpl extends HibernateDaoSupport implements HafuOrd
 		});
 		return list.get(0);
 	}
-
 
 }

@@ -41,16 +41,16 @@ public class HafuOrderGoodServiceImpl implements HafuOrderGoodService{
 		orderGoodPage.setOrderGoods(list);
 		orderGoodPage.setCurrentPage(currentPage);
 		orderGoodPage.setPageSize(pageSize);
-		int totalCount = hafuOrderGoodDao.findTotalOrderGoodCount();
+		int totalCount = hafuOrderGoodDao.findTotalOrderGoodCount(orderid);
 		orderGoodPage.setTotalCount(totalCount);
 		orderGoodPage.setTotalPage(totalCount % pageSize == 0 ? totalCount/pageSize : totalCount/pageSize + 1);
 		return orderGoodPage;
 	}
 
 	@Override
-	public HafuOrderGoodComment findOrderGoddById(int orderid, int gid) {
+	public HafuOrderGoodComment findOrderGoodById(int orderid, int gid) {
 		// TODO Auto-generated method stub
-		return hafuOrderGoodDao.findOrderGoddById(orderid, gid);
+		return hafuOrderGoodDao.findOrderGoodById(orderid, gid);
 	}
 
 }
