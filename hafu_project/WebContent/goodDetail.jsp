@@ -171,7 +171,7 @@
 					
 					<form action ="checkoutGood?gid=${requestScope.hafuGoodComment.gid}" name="form${requestScope.hafuGoodComment.gid}" method="post">
 							<input min="1" type="number" id="quantity" name="goodnumber" value="1" class="form-control input-small">
-							<input type="submit" onclick="alert('已添加购物车!')" class="item_add items" value="Add">
+							<input type="submit" onclick="alert('已添加购物车!')" class="item_add items" value="加入购物车！">
 					</form>
 				</div>
 				
