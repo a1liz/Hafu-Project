@@ -185,7 +185,7 @@
 					<a href="products.html"><img src="images/di1.png" class="img-responsive"  width="299px" height="315px" alt=""/>
 						<div class="gallery-info">
 							<p><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span> view</p>
-							<a class="shop" href="single.html">SHOP NOW</a>
+							<a class="shop" href="good_search?sid=1">SHOP NOW</a>
 							<div class="clearfix"> </div>
 						</div>
 					</a>
