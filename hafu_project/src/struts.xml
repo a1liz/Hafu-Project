@@ -28,6 +28,9 @@
 	<action name="checkoutGood_search" class="com.hafu.action.CheckoutGoodAction" method="search">
 		<result name="success">checkout.jsp</result>
 	</action>
+	<action name="good_detail_search" class="com.hafu.action.GoodAction" method="searchGoodDetail">
+		<result name="success">goodDetail.jsp</result>
+	</action>
     </package>
 
 </struts>

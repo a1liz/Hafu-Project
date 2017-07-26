@@ -221,10 +221,10 @@
 				</div>
 				<c:forEach items="${requestScope.goodPage.goods}" var="good">
 				<div class="col-md-3 gallery-grid ">
-					<a href="products.html"><img src="${good.icon}" class="img-responsive" alt=""/>
+					<a href="good_detail_search?gid=${good.gid}"><img src="${good.icon}" class="img-responsive" alt=""/>
 						<div class="gallery-info">
 							<p><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span> view</p>
-							<a class="shop" href="single.html">SHOP NOW</a>
+							<a class="shop" href="good_detail_search?gid=${good.gid}">SHOP NOW</a>
 							<div class="clearfix"> </div>
 						</div>
 					</a>

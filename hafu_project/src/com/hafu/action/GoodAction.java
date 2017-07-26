@@ -48,4 +48,15 @@ public class GoodAction extends ActionSupport implements ModelDriven<HafuGoodCom
 		ServletActionContext.getRequest().setAttribute("goodPage", goodPage);
 		return SUCCESS;
 	}
+	
+	public String searchGoodDetail() {
+		int gid = 1;
+		String tmp = ServletActionContext.getRequest().getParameter("gid");
+		if (tmp != null) {
+			gid = Integer.parseInt(tmp);
+		}
+		HafuGoodComment hafuGoodComment = hafuGoodService.findGoodByGoodId(gid);
+		ServletActionContext.getRequest().setAttribute("hafuGoodComment", hafuGoodComment);
+		return SUCCESS;
+	}
 }
