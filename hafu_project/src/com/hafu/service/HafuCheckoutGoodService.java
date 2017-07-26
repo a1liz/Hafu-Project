@@ -17,6 +17,8 @@ public interface HafuCheckoutGoodService {
 	public void update(HafuCheckoutGoodComment checkoutGood);
 	// 删除
 	public void delete(int cid,int gid);
+	// 删除某一购物车对应的所有商品信息
+	public void deleteByCheckoutId(int cid);
 	// 根据购物车id查询购物车详情
 	public CheckoutGoodPage findCheckoutGoodByCheckoutId(int cid,int currentPage,int pageSize);
 	// 根据购物车id和商品id查询某一购物车对应商品详情

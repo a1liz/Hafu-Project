@@ -85,5 +85,11 @@ public class HafuCheckoutGoodServiceImpl implements HafuCheckoutGoodService{
 	public void setHafuGoodDao(HafuGoodDao hafuGoodDao) {
 		this.hafuGoodDao = hafuGoodDao;
 	}
+
+	@Override
+	public void deleteByCheckoutId(int cid) {
+		// TODO Auto-generated method stub
+		hafuCheckoutGoodDao.deleteByCheckoutId(cid);
+	}
 	
 }

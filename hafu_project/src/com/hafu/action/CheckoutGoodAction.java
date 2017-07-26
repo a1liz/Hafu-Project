@@ -74,4 +74,10 @@ public class CheckoutGoodAction extends ActionSupport implements ModelDriven<Haf
 		ServletActionContext.getRequest().setAttribute("checkoutGoodPage", checkoutGoodPage);
 		return SUCCESS;
 	}
+	
+	public String clear() {
+		HafuCheckoutComment hafuCheckoutComment = (HafuCheckoutComment) ServletActionContext.getRequest().getSession().getAttribute("hafuCheckoutComment");
+		hafuCheckoutGoodService.deleteByCheckoutId(hafuCheckoutComment.getCid());
+		return SUCCESS;
+	}
 }

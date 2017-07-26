@@ -31,6 +31,9 @@
 	<action name="good_detail_search" class="com.hafu.action.GoodAction" method="searchGoodDetail">
 		<result name="success">goodDetail.jsp</result>
 	</action>
+	<action name="checkoutGood_clear" class="com.hafu.action.CheckoutGoodAction" method="clear">
+		<result name="success">order.jsp</result>
+	</action>
     </package>
 
 </struts>

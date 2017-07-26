@@ -93,4 +93,13 @@ public class HafuCheckoutGoodDaoImpl extends HibernateDaoSupport implements Hafu
 		return list.get(0).intValue();
 	}
 
+	@Override
+	public void deleteByCheckoutId(int cid) {
+		// TODO Auto-generated method stub
+		List<HafuCheckoutGoodComment> list = this.findCheckoutGoodByCheckoutId(cid, 1, 20);
+		for (HafuCheckoutGoodComment hafuCheckoutGoodComment : list) {
+			this.delete(cid, hafuCheckoutGoodComment.getId().getGid());
+		}
+	}
+
 }

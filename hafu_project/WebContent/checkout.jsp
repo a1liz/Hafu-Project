@@ -271,7 +271,7 @@
 					</div>
 				</div>
 				<div class="header-right cart">
-					<a href="order.jsp"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span></a>
+					<a href="checkoutGood_clear"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span></a>
 					<div class="cart-box">
 						<h4><a href="">
 							<span class="simpleCart_total"> ¥20.00 </span> (<span id="simpleCart_quantity" class="simpleCart_quantity"> 0 </span>) 
