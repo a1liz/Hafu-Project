@@ -145,6 +145,26 @@ body{
      -o-transition: all 0.3s ease;
 	 border:2px solid #fff;
 }
+.log-bwn input[type="button"] {
+    font-size: 15px;
+    font-weight: 700;
+    color: #fff;
+    padding: 13px 0;
+    background: #ff3366;
+    display: inline-block;
+    width: 100%;
+	outline:none;
+	border:2px solid #ff3366;
+	cursor:pointer;
+	text-transform:uppercase;
+}
+.log-bwn input[type="button"]:hover{
+	transition: all 0.3s ease;
+     -webkit-transition: all 0.3s ease;
+     -moz-transition: all 0.3s ease;
+     -o-transition: all 0.3s ease;
+	 border:2px solid #fff;
+}
 /*-- profile_2 --*/
 p.copy{
 	color:#fff;

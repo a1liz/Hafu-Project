@@ -33,7 +33,10 @@
 			
 				<div class="log-bwn">
 					<input type="submit"  value="注册" onclick="alert('注册成功！')" >
-					<a href="login.jsp">登录</a>
+				</div>
+				
+				<div class="log-bwn">
+					<a href="login.jsp"><input type="button"  value="登陆" ></a>
 				</div>
 				</form>
 			</div>

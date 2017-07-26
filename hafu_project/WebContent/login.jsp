@@ -33,7 +33,10 @@
 			
 				<div class="log-bwn">
 					<input type="submit"  value="登录" >
-					<a href="signup.jsp">注册</a>
+				</div>
+				
+				<div class="log-bwn">
+					<a href="signup.jsp"><input type="button"  value="注册" ></a>
 				</div>
 				</form>
 			</div>
