@@ -34,6 +34,9 @@
 	<action name="checkoutGood_clear" class="com.hafu.action.CheckoutGoodAction" method="clear">
 		<result name="success">order.jsp</result>
 	</action>
+	<action name="login_android" class="com.hafu.action.LoginAndroidAction">
+		<result name="success">index.jsp</result>
+	</action>
     </package>
 
 </struts>
