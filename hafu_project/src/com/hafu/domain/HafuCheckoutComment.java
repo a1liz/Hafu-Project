@@ -1,5 +1,5 @@
 package com.hafu.domain;
-// Generated 2017-7-25 11:03:09 by Hibernate Tools 5.2.3.Final
+// Generated 2017-8-10 10:33:21 by Hibernate Tools 5.2.3.Final
 
 import java.util.HashSet;
 import java.util.Set;
@@ -10,18 +10,18 @@ import java.util.Set;
 public class HafuCheckoutComment implements java.io.Serializable {
 
 	private Integer cid;
-	private int uid;
+	private HafuUserComment hafuUserComment;
 	private Set hafuCheckoutGoodComments = new HashSet(0);
 
 	public HafuCheckoutComment() {
 	}
 
-	public HafuCheckoutComment(int uid) {
-		this.uid = uid;
+	public HafuCheckoutComment(HafuUserComment hafuUserComment) {
+		this.hafuUserComment = hafuUserComment;
 	}
 
-	public HafuCheckoutComment(int uid, Set hafuCheckoutGoodComments) {
-		this.uid = uid;
+	public HafuCheckoutComment(HafuUserComment hafuUserComment, Set hafuCheckoutGoodComments) {
+		this.hafuUserComment = hafuUserComment;
 		this.hafuCheckoutGoodComments = hafuCheckoutGoodComments;
 	}
 
@@ -33,12 +33,12 @@ public class HafuCheckoutComment implements java.io.Serializable {
 		this.cid = cid;
 	}
 
-	public int getUid() {
-		return this.uid;
+	public HafuUserComment getHafuUserComment() {
+		return this.hafuUserComment;
 	}
 
-	public void setUid(int uid) {
-		this.uid = uid;
+	public void setHafuUserComment(HafuUserComment hafuUserComment) {
+		this.hafuUserComment = hafuUserComment;
 	}
 
 	public Set getHafuCheckoutGoodComments() {

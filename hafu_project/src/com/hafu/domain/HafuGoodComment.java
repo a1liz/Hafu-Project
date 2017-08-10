@@ -1,5 +1,5 @@
 package com.hafu.domain;
-// Generated 2017-7-21 16:02:03 by Hibernate Tools 5.2.3.Final
+// Generated 2017-8-10 10:33:21 by Hibernate Tools 5.2.3.Final
 
 import java.util.HashSet;
 import java.util.Set;
@@ -16,6 +16,7 @@ public class HafuGoodComment implements java.io.Serializable {
 	private String icon;
 	private String goodProfile;
 	private Integer goodStatus;
+	private Set hafuCheckoutGoodComments = new HashSet(0);
 	private Set hafuOrderComments = new HashSet(0);
 	private Set hafuOrderGoodComments = new HashSet(0);
 
@@ -23,13 +24,15 @@ public class HafuGoodComment implements java.io.Serializable {
 	}
 
 	public HafuGoodComment(HafuStoreComment hafuStoreComment, String goodname, Double goodPrice, String icon,
-			String goodProfile, Integer goodStatus, Set hafuOrderComments, Set hafuOrderGoodComments) {
+			String goodProfile, Integer goodStatus, Set hafuCheckoutGoodComments, Set hafuOrderComments,
+			Set hafuOrderGoodComments) {
 		this.hafuStoreComment = hafuStoreComment;
 		this.goodname = goodname;
 		this.goodPrice = goodPrice;
 		this.icon = icon;
 		this.goodProfile = goodProfile;
 		this.goodStatus = goodStatus;
+		this.hafuCheckoutGoodComments = hafuCheckoutGoodComments;
 		this.hafuOrderComments = hafuOrderComments;
 		this.hafuOrderGoodComments = hafuOrderGoodComments;
 	}
@@ -88,6 +91,14 @@ public class HafuGoodComment implements java.io.Serializable {
 
 	public void setGoodStatus(Integer goodStatus) {
 		this.goodStatus = goodStatus;
+	}
+
+	public Set getHafuCheckoutGoodComments() {
+		return this.hafuCheckoutGoodComments;
+	}
+
+	public void setHafuCheckoutGoodComments(Set hafuCheckoutGoodComments) {
+		this.hafuCheckoutGoodComments = hafuCheckoutGoodComments;
 	}
 
 	public Set getHafuOrderComments() {

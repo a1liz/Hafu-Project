@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Generated 2017-7-25 11:03:09 by Hibernate Tools 5.2.3.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2017-8-10 10:33:22 by Hibernate Tools 5.2.3.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping auto-import="true" default-access="property" default-cascade="none" default-lazy="true">
     <class catalog="hafu_db" dynamic-insert="false" dynamic-update="false" mutable="true" name="com.hafu.domain.HafuCheckoutComment" optimistic-lock="version" polymorphism="implicit" select-before-update="false" table="hafu_checkout_comment">
         <id name="cid" type="java.lang.Integer">
             <column name="cid"/>
             <generator class="identity"/>
         </id>
-        <property generated="never" lazy="false" name="uid" optimistic-lock="true" type="int" unique="false">
+        <many-to-one class="com.hafu.domain.HafuUserComment" embed-xml="true" fetch="select" insert="true" name="hafuUserComment" not-found="exception" optimistic-lock="true" unique="false" update="true">
             <column name="uid" not-null="true" unique="true"/>
-        </property>
+        </many-to-one>
         <set embed-xml="true" fetch="select" inverse="true" lazy="true" mutable="true" name="hafuCheckoutGoodComments" optimistic-lock="true" sort="unsorted" table="hafu_checkoutGood_comment">
             <key on-delete="noaction">
                 <column name="cid" not-null="true"/>

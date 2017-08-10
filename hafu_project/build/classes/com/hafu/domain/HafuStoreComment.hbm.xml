@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Generated 2017-7-21 16:02:03 by Hibernate Tools 5.2.3.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2017-8-10 10:33:22 by Hibernate Tools 5.2.3.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping auto-import="true" default-access="property" default-cascade="none" default-lazy="true">
     <class catalog="hafu_db" dynamic-insert="false" dynamic-update="false" mutable="true" name="com.hafu.domain.HafuStoreComment" optimistic-lock="version" polymorphism="implicit" select-before-update="false" table="hafu_store_comment">
         <id name="sid" type="java.lang.Integer">
@@ -26,6 +26,39 @@
         </property>
         <property generated="never" lazy="false" name="fee" optimistic-lock="true" type="java.lang.Double" unique="false">
             <column name="fee" precision="22" scale="0"/>
+        </property>
+        <property generated="never" lazy="false" name="minPrice" optimistic-lock="true" type="double" unique="false">
+            <column name="min_price" not-null="true" precision="22" scale="0"/>
+        </property>
+        <property generated="never" lazy="false" name="rating" optimistic-lock="true" type="double" unique="false">
+            <column name="rating" not-null="true" precision="22" scale="0"/>
+        </property>
+        <property generated="never" lazy="false" name="ratingUserNum" optimistic-lock="true" type="int" unique="false">
+            <column name="ratingUserNum" not-null="true"/>
+        </property>
+        <property generated="never" lazy="false" name="boughtUserNum" optimistic-lock="true" type="int" unique="false">
+            <column name="boughtUserNum" not-null="true"/>
+        </property>
+        <property generated="never" lazy="false" name="isZhuan" optimistic-lock="true" type="int" unique="false">
+            <column name="isZhuan" not-null="true"/>
+        </property>
+        <property generated="never" lazy="false" name="isSu" optimistic-lock="true" type="int" unique="false">
+            <column name="isSu" not-null="true"/>
+        </property>
+        <property generated="never" lazy="false" name="isPiao" optimistic-lock="true" type="int" unique="false">
+            <column name="isPiao" not-null="true"/>
+        </property>
+        <property generated="never" lazy="false" name="isMan" optimistic-lock="true" type="int" unique="false">
+            <column name="isMan" not-null="true"/>
+        </property>
+        <property generated="never" lazy="false" name="manTotal" optimistic-lock="true" type="int" unique="false">
+            <column name="ManTotal" not-null="true"/>
+        </property>
+        <property generated="never" lazy="false" name="manSale" optimistic-lock="true" type="int" unique="false">
+            <column name="ManSale" not-null="true"/>
+        </property>
+        <property generated="never" lazy="false" name="diNum" optimistic-lock="true" type="int" unique="false">
+            <column name="DiNum" not-null="true"/>
         </property>
         <property generated="never" lazy="false" name="deliveryRange" optimistic-lock="true" type="java.lang.Double" unique="false">
             <column name="deliveryRange" precision="22" scale="0"/>

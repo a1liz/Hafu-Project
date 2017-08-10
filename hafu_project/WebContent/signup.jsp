@@ -30,6 +30,11 @@
 					<input type="password" name="password" value="password" onFocus="this.value = '';" onBlur="if (this.value == '') {this.value = 'password';}"/>
 					<div class="clear"> </div>
 				</div>
+				<div class="login-ic">
+					<i class="icon"></i>
+					<input type="text" name="regphone" value="手机号" onFocus="this.value = '';" onBlur="if (this.value == '') {this.value = '';}"/>
+					<div class="clear"> </div>
+				</div>
 			
 				<div class="log-bwn">
 					<input type="submit"  value="注册" onclick="alert('注册成功！')" >

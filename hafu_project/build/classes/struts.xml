@@ -6,13 +6,22 @@
 <struts>
 
     <package name="default" namespace="/" extends="struts-default">
-    <action name="login" class="com.hafu.action.LoginAction" >
+    <action name="login" class="com.hafu.action.UserAction" method="login">
 		<result name="success">index.jsp</result>
 		<result name="fail">login.jsp</result>
 		</action>
-	<action name="signup" class="com.hafu.action.SignupAction" >
+	<action name="signup" class="com.hafu.action.UserAction" method="register">
 		<result name="success">login.jsp</result>
 		<result name="fail">signup.jsp</result>
+	</action>
+	<action name="login_android" class="com.hafu.action.UserAction" method="loginAndroid">
+		<result name="success">index.jsp</result>
+	</action>
+	<action name="signup_android" class="com.hafu.action.UserAction" method="registerAndroid">
+		<result name="success">index.jsp</result>
+	</action>
+	<action name="get_address" class="com.hafu.action.UserAction" method="getAddress">
+		<result name="success">index.jsp</result>
 	</action>
 	<action name="store_search" class="com.hafu.action.StoreAction" >
 		<result name="success">store.jsp</result>
@@ -34,9 +43,7 @@
 	<action name="checkoutGood_clear" class="com.hafu.action.CheckoutGoodAction" method="clear">
 		<result name="success">order.jsp</result>
 	</action>
-	<action name="login_android" class="com.hafu.action.LoginAndroidAction">
-		<result name="success">index.jsp</result>
-	</action>
+
     </package>
 
 </struts>
