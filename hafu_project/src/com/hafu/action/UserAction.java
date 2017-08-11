@@ -2,6 +2,7 @@ package com.hafu.action;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -21,6 +22,7 @@ import com.hafu.domain.HafuUserComment;
 import com.hafu.domain.HafuUserProfileComment;
 import com.hafu.service.HafuCheckoutService;
 import com.hafu.service.HafuUserProfileService;
+import com.hafu.service.HafuUserService;
 import com.hafu.util.HibernateUtil;
 import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.ModelDriven;
@@ -29,7 +31,8 @@ public class UserAction extends ActionSupport implements ModelDriven<HafuUserCom
 	private HafuUserComment hafu_user_comment = new HafuUserComment();
 	private HafuCheckoutService hafuCheckoutService;
 	private HafuUserProfileService hafuUserProfileService;
-	
+	private HafuUserService hafuUserService;
+
 	private HttpServletRequest request;
 	private HttpServletResponse response;
 
@@ -190,15 +193,25 @@ public class UserAction extends ActionSupport implements ModelDriven<HafuUserCom
 		String string;
 		JSONArray jsonArray = new JSONArray();
 		if (!list.isEmpty()) {
-			jsonArray.add("TRUE");
-			for (HafuUserProfileComment hafuUserProfileComment : list) {
-				JSONObject jsonObject = new JSONObject();
-				jsonObject.put("name", hafuUserProfileComment.getName());
-				jsonObject.put("pid", hafuUserProfileComment.getPid());
-				jsonObject.put("phone", hafuUserProfileComment.getPhone());
-				jsonObject.put("address", hafuUserProfileComment.getUserAddress());
-				jsonArray.add(jsonObject);
-			}
+//			System.out.println(list.toString());
+//			for (HafuUserProfileComment hafuUserProfileComment : list) {
+//				if (hafuUserProfileComment.getGender() != null) {
+//					list.remove(hafuUserProfileComment);
+//				}
+//			}
+//			if (!list.isEmpty()) {
+				jsonArray.add("TRUE");
+				for (HafuUserProfileComment hafuUserProfileComment : list) {
+					JSONObject jsonObject = new JSONObject();
+					jsonObject.put("name", hafuUserProfileComment.getName());
+					jsonObject.put("pid", hafuUserProfileComment.getPid());
+					jsonObject.put("phone", hafuUserProfileComment.getPhone());
+					jsonObject.put("address", hafuUserProfileComment.getUserAddress());
+					jsonArray.add(jsonObject);
+				}
+//			} else {
+//				jsonArray.add("FALSE");
+//			}
 		} else {
 			jsonArray.add("FALSE");
 		}
@@ -215,6 +228,60 @@ public class UserAction extends ActionSupport implements ModelDriven<HafuUserCom
 		return SUCCESS;
 	}
 
+	public String setPrimaryAddress() {
+		response.setCharacterEncoding("utf-8");
+		String string;
+		try {
+			String uid = (String) request.getParameter("uid");
+			String mainAddress = (String) request.getParameter("mainAddress");
+			String newAddress = (String) request.getParameter("newAddress");
+			JSONArray jsonArray = JSONArray.parseArray(newAddress);
+			List<HafuUserProfileComment> list = hafuUserProfileService.findUserProfileByUserId(Integer.valueOf(uid));
+			List<Integer> pids = new ArrayList<>();
+			for (int i = 0; i < jsonArray.size(); i++) {
+				if (((JSONObject)jsonArray.get(i)).get("pid").equals("")) {
+					String name = ((JSONObject)jsonArray.get(i)).get("name").toString();
+					String phone = ((JSONObject)jsonArray.get(i)).get("phone").toString();
+					String address = ((JSONObject)jsonArray.get(i)).get("address").toString();
+					HafuUserProfileComment hafuUserProfileComment = new HafuUserProfileComment(hafuUserService.findUserById(Integer.valueOf(uid)),name,null,address,phone);
+					hafuUserProfileService.add(hafuUserProfileComment);
+				} else {
+					int pid = Integer.valueOf(((JSONObject)jsonArray.get(i)).get("pid").toString());
+					String name = ((JSONObject)jsonArray.get(i)).get("name").toString();
+					String phone = ((JSONObject)jsonArray.get(i)).get("phone").toString();
+					String address = ((JSONObject)jsonArray.get(i)).get("address").toString();
+					HafuUserProfileComment hafuUserProfileComment = hafuUserProfileService.findUserProfileByUserProfileId(pid);
+					hafuUserProfileComment.setName(name);
+					hafuUserProfileComment.setPhone(phone);
+					hafuUserProfileComment.setUserAddress(address);
+					hafuUserProfileService.update(hafuUserProfileComment);
+					pids.add(pid);
+				}
+			}
+			for (HafuUserProfileComment userProfile : list) {
+				if (!pids.contains(userProfile.getPid())) {
+					hafuUserProfileService.delete(userProfile.getPid());
+				}
+			}
+			HafuUserComment hafuUserComment = hafuUserService.findUserById(Integer.valueOf(uid));
+			hafuUserComment.setMainAddress(Integer.valueOf(mainAddress));
+			hafuUserService.update(hafuUserComment);
+			string = "TRUE";
+		} catch (Exception e) {
+			// TODO: handle exception
+			string = "FALSE";
+		}
+		try {
+			PrintWriter out = response.getWriter();
+			out.print(string);
+			out.flush();
+			out.close();
+		} catch (IOException e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+		return SUCCESS;
+	}
 	public HafuCheckoutService getHafuCheckoutService() {
 		return hafuCheckoutService;
 	}
@@ -243,4 +310,11 @@ public class UserAction extends ActionSupport implements ModelDriven<HafuUserCom
 		this.hafuUserProfileService = hafuUserProfileService;
 	}
 
+	public HafuUserService getHafuUserService() {
+		return hafuUserService;
+	}
+
+	public void setHafuUserService(HafuUserService hafuUserService) {
+		this.hafuUserService = hafuUserService;
+	}
 }

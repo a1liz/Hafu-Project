@@ -23,6 +23,9 @@
 	<action name="get_address" class="com.hafu.action.UserAction" method="getAddress">
 		<result name="success">index.jsp</result>
 	</action>
+	<action name="set_primary_address" class="com.hafu.action.UserAction" method="setPrimaryAddress">
+		<result name="success">index.jsp</result>
+	</action>
 	<action name="store_search" class="com.hafu.action.StoreAction" >
 		<result name="success">store.jsp</result>
 		<result name="fail">searchfailed.jsp</result>

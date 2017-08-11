@@ -59,6 +59,7 @@
 	<bean id="com.hafu.action.UserAction" class="com.hafu.action.UserAction" scope="prototype">
 	<property name="hafuCheckoutService" ref="hafuCheckoutService"></property>
 	<property name="hafuUserProfileService" ref="hafuUserProfileService"></property>
+	<property name="hafuUserService" ref="hafuUserService"></property>
 	</bean>
 	<bean id="com.hafu.action.GoodAction" class="com.hafu.action.GoodAction" scope="prototype">
 	<property name="hafuGoodService" ref="hafuGoodService"></property>
@@ -90,6 +91,9 @@
 	<property name="hafuCheckoutGoodDao" ref="hafuCheckoutGoodDao"/>
 	<property name="hafuGoodDao" ref="hafuGoodDao"></property>
 	</bean>
+	<bean id="hafuUserService" class="com.hafu.service.impl.HafuUserServiceImpl">
+	<property name="hafuUserDao" ref="hafuUserDao"></property>
+	</bean>
 	
 	<!-- DAO的配置 -->
 	<bean id="hafuGoodDao" class="com.hafu.dao.impl.HafuGoodDaoImpl">
@@ -111,6 +115,9 @@
 		<property name="sessionFactory" ref="sessionFactory"></property>
 	</bean>
 	<bean id="hafuCheckoutGoodDao" class="com.hafu.dao.impl.HafuCheckoutGoodDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<bean id="hafuUserDao" class="com.hafu.dao.impl.HafuUserDaoImpl">
 		<property name="sessionFactory" ref="sessionFactory"></property>
 	</bean>
 	
